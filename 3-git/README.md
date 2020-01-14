@@ -1,27 +1,52 @@
-# 3 - GIT
+# GIT
 
 This document gives an overall picture of `Git`, assuming no previous background.
 
-### Table of contents:
-[3.0 Git basics](#30-git-basics)
+### Document contents:
+[Basics of Git](#30-git-basics)
 
-[3.1 Step 1: Working in the local repository](#31-working-in-the-local-repository)
+[Step 1: Working in the local repository](#31-working-in-the-local-repository)
 - Commands treated: `git init`, `git status`, `git diff`, `git add`, `git commit`, `git log`
 
-[3.2 Step 2: Working with remote repositories](#32-working-with-remote-repositories)
+[Step 2: Working with remote repositories](#32-working-with-remote-repositories)
 - Commands treated: `git clone`, `git remote add`, `git fetch`, `git merge`, `git push`
 
-[3.3 Step 3: Working with branches](#33-working-with-branches)
+[Step 3: Working with branches](#33-working-with-branches)
 - Commands treated: `git clone`, `git remote add`, `git fetch`, `git merge`, `git push`
 
-This document lists useful commands to be used while using `Git`: from initializing the project to work with branches and pushing code to GitHub. This file assumes no previous background.
+## 0 Git basics
+### 0.1 Why is `Git` useful?
+`Git` makes it easy to handle code written by a team. First, by enabling multiple people to work in different parts of the code without interfering with one another thanks to what we call 'branches'. Secondly, it by allowing recoverability; `Git` keeps track of the changes made to the code at any state, and makes it easy to recover any step the code has been in.
 
-## 3.0 Git basics
+The usefulness of `Git` has brought complimentary tools such as `GitHub`, which added many additional features allowing open-sourcing, Continuous Integration and Delivery, and much more.
 
-## 3.1. Working in the Local Repository
-### 3.1.0 Initializing
+### 0.2 Basic concepts
+####  The `.git` folder: where data is stored
+Instead of keeping a snapshot of the latest state of the files, `Git` stores documents as an overlay of changes, in a tree structure inside the `.git` folder. The `.git` folder is a hidden folder saved in the path we have told `Git` to initialize (either with `git init` or `git clone`; see sections 1 and 2).
+
+- Example, from an original file of 2000 lines of code, if we remove 10 lines of code and add 50, instead of replacing the 2000 lines of code file with another with 2040 lines, `Git` will keep the original file and place on top of it a new file mentioning the changes in the code (the 10 lines removed and the 50 added). That way, any code that was saved in the `.git` folder is retrievable.
+
+Note: it is important to distinguish our working files with our local files inside the `.git` folder. Our 'local' files are those saved in the working folder, the ones we open with the text editor and modify. `Git` will save (when we `commit`) and retrieve (for example, when we change branches) versions of these files in the `.git` folder when we tell it so. These versions or 'snapshots' of our code is what `Git` handles.
+
+#### Committing
+Committing is the way we tell `Git` to save the current state of our code in the local `.git` folder. Once our local code is up to date with the `.git` folder, we can run the `git commit` command to save the changes (see paragraph 1 below).
+
+#### Branches
+A branch is an independent version of the code; multiple branches can be active at the same time. Each person usually works in a single 'branch' (usually adding a new, isolated feature for the code), the changes that person makes to the branch will not affect other parts of the code. Once the branch is finished, changes on the branch can be easily compared to the current version of the code, making the code easy to review.
+
+Note: Each branch is created for developers to work in a single feature without affecting the `master` branch (the 'current working version' of the code); once a branch is tested , it is 'merged' back (usually) to the `master` branch. 
+- Example of when to use a branch: On monday, a developer of a Pet shop website is asked to add a new service to the website of displaying a photo of the available pets. For that, he creates a new branch called `pets-photos` (which at the beginning is a copy of the `master` branch), and starts working on it; he estimates he will do the job in three days. Creating a new branch allows him to start working on new code without losing the 'working version': '`master`'. On tuesday afternoon, he receives a call from his boss saying the website is down due to a bug on the code! `Git` allows him to save the current work on the `pets-photos` branch, and then create a new `urgent-fix` branch (which is again a copy of `master`) to fix the bug quickly. Once he is done fixing the bug, he merges the code of `urgent-fix` back to `master`, which enables the webpage to work again (`master` is now updated with the changes of `urgent-fix`). Now, the developer can take back where he left the `pets-photos` branch, and continue the feature he was previously working on. 
+
+
+## 1. Working in the Local Repository
+### 1.0 Initializing
 ```git init```
-- creates an empty Git repository ('.git') (to gather all committed files from the working document)
+- creates an empty Git repository (`'.git'`) that gathers all committed files from the working document (see paragraph 0.2).
+
+#### Basic files
+Apart from our codebase, it is a good idea to initialize each project with two additional files:
+- `README.md` file: uses the [Markdown language](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf) to render a description of the Project in GitHub.
+- `.gitignore` file: a list of the files we do not want to upload to Github.
 
 #### Note on `gitignore` file
 The `.gitignore` file contains all files and terminations that should be ignored by `Git` (those files you might have or want in your local repository but you do not need in your code, such as `VS Code` files '`.vscode'`.)
@@ -32,7 +57,7 @@ The file contains a list of all terminations, folders, files to be ignored. The 
 
 Example of `.gitignore` file: https://gist.github.com/octocat/9257657
 
-### 3.1.1 Adding, Removing and Modifying files in the Staging Area
+### 1.1 Adding, Removing and Modifying files in the Staging Area
 Conceptually, the Staging Area is what `Git` calls the list of 'files to be added later to my code'. 
 The Staging Area allows us to keep track of the current changes of our code in real time. When a file added to the staging area, `Git` will save a snapshot of that file; `Git` will then be able to know if we have made changes on that file.
 
@@ -61,7 +86,7 @@ Once it is on the staging area, the file will be ready to be Committed (Saved on
 - Updates the name of the file from v1 to v2 (so `Git` can keep track of the changes since the beginning). 
 Note: if you remove the file (`git rm <previous_file_name>`) then add it again with another name(`git add <new_file_name>`), `Git` will still figure out the file is being renamed, but the `mv` command is the explicit way of doing so (preferred way).
 
-## 3.1.2 Comitting files from Staging area to Local Repository
+## 1.2 Comitting files from Staging area to Local Repository
 Once the local changes have been sent to Staging area (git has taken a 'snapshot' of the files), these snapshots are ready to be saved in the local git repository. Once in the local repository, any saved state will be retrievable at any time.
 
 ### Adding files to the Local Repository
@@ -78,13 +103,16 @@ Useful options:
 - `git log --pretty=oneline` displays all the information in one line
 - `git log --pretty=format:" %s" --graph` displays the info demanded ("%h" prints the commit hash, "%s" prints the subject) in a visual way showing the branch and merge history.
 
-## 3.2. Working with Remote Repositories
-### 3.2.0 Cloning remote repositories
+## 2. Working with Remote Repositories
+
+
+
+### 2.0 Cloning remote repositories
 ```git clone [URL]```
 - Creates a new folder in current directory, and copies all information of the specified URL
 - `git clone [URL] name`: adding 'name' creates a folder with named 'name', and clones the content of the URL
 
-### 3.2.1 Adding/checking remote repositories
+### 2.1 Adding/checking remote repositories
 ```git remote```
 - tells you the names of the remote repositories you have configured
 ..* adding -v (verbose) will tell you the URL. Note: `origin` is the default name of the repository you cloned your local file from.
@@ -100,7 +128,7 @@ example: `git remote add origin https://github....`
 - changes the name of the remote file from old to new name
 
 
-### 3.2.2 Pulling data from remote repositories
+### 2.2 Pulling data from remote repositories
 ```git fetch [remote repository name] [branchname]```
 - updates the 'origin/master' local Git folder from the data of the 'master' remote repository (Github). Only the .git file is changed, not the working directory. 
 ex: `git fetch origin master`
@@ -113,7 +141,7 @@ ex: `git merge origin master`
 - the pull command is equivalent of (fetch & merge)
 ex: `git pull origin maser`
 
-### 3.2.3 Pushing data upstream
+### 2.3 Pushing data upstream
 ```git push [remote repository name] [branchname]```
 - "pushes" or updates the local data to the virtual repository. (will only work if you have access and if nobody has pushed since the last time you pulled code. If the code has been updated, you'll need to pull the code, change it, and then push it.)
 - Adding `-u` creates a bond between 'origin/master' (local Git repository) and the virtual 'master' on Github. `-u` needs to be called one time only to do the bonding.
@@ -121,12 +149,12 @@ ex: `git pull origin maser`
 #### Force-pushing (Use very carefully)
 In the cases we are sure
 
-### 3.2.4 Tagging
+### 2.4 Tagging
 ```git tag -a [tag] -m [tag message]```
 - sets up an annotated tag that will be associated with a specific commit
 ex: `git tag -a v1.1 -m 'This is the 1.1 version'`
 
-## 3.3. Working with Branches
+## 3. Working with Branches
 Branching allows you to work in multiple tasks at the same time. For example: you are building some feature for an app. You create a branch "feature 1", and start working on it; the main "production" branch (Master) is unchanged. Then, you need to start working on another urgent feature. You create a branch from the master and start working on it.
 Useful link: https://git-scm.com/book/en/v1/Git-Branching-Basic-Branching-and-Merging
 	
