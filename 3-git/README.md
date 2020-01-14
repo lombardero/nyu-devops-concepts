@@ -1,9 +1,25 @@
-# GIT COMMANDS CHEATSHEET
+# 3 - GIT
+
+This document gives an overall picture of `Git`, assuming no previous background.
+
+### Table of contents:
+[#### 3.0 Git basics](##3.0.-git-basics)
+
+[#### 3.1 Step 1: Working in the local repository](##3.1.-working-in-the-local-repository)
+- Commands treated: `git init`, `git status`, `git diff`, `git add`, `git commit`, `git log`
+
+[#### 3.2 Step 2: Working with remote repositories](##3.2.-working-with-remote-repositories)
+- Commands treated: `git clone`, `git remote add`, `git fetch`, `git merge`, `git push`
+
+[#### 3.3 Step 3: Working with branches](##3.3.-working-with-branches)
+- Commands treated: `git clone`, `git remote add`, `git fetch`, `git merge`, `git push`
 
 This document lists useful commands to be used while using `Git`: from initializing the project to work with branches and pushing code to GitHub. This file assumes no previous background.
 
-## 1. Git: Working in the Local Repository
-### 1.0 Initializing
+## 3.0 Git basics
+
+## 3.1. Working in the Local Repository
+### 3.1.0 Initializing
 ```git init```
 - creates an empty Git repository ('.git') (to gather all committed files from the working document)
 
@@ -16,7 +32,7 @@ The file contains a list of all terminations, folders, files to be ignored. The 
 
 Example of `.gitignore` file: https://gist.github.com/octocat/9257657
 
-### 1.1 Adding, Removing and Modifying files in the Staging Area
+### 3.1.1 Adding, Removing and Modifying files in the Staging Area
 Conceptually, the Staging Area is what `Git` calls the list of 'files to be added later to my code'. 
 The Staging Area allows us to keep track of the current changes of our code in real time. When a file added to the staging area, `Git` will save a snapshot of that file; `Git` will then be able to know if we have made changes on that file.
 
@@ -45,7 +61,7 @@ Once it is on the staging area, the file will be ready to be Committed (Saved on
 - Updates the name of the file from v1 to v2 (so `Git` can keep track of the changes since the beginning). 
 Note: if you remove the file (`git rm <previous_file_name>`) then add it again with another name(`git add <new_file_name>`), `Git` will still figure out the file is being renamed, but the `mv` command is the explicit way of doing so (preferred way).
 
-## 1.2 Comitting files from Staging area to Local Repository
+## 3.1.2 Comitting files from Staging area to Local Repository
 Once the local changes have been sent to Staging area (git has taken a 'snapshot' of the files), these snapshots are ready to be saved in the local git repository. Once in the local repository, any saved state will be retrievable at any time.
 
 ### Adding files to the Local Repository
@@ -62,13 +78,13 @@ Useful options:
 - `git log --pretty=oneline` displays all the information in one line
 - `git log --pretty=format:" %s" --graph` displays the info demanded ("%h" prints the commit hash, "%s" prints the subject) in a visual way showing the branch and merge history.
 
-## 2. Working with Remote Repositories
-### 2.0 Cloning remote repositories
+## 3.2. Working with Remote Repositories
+### 3.2.0 Cloning remote repositories
 ```git clone [URL]```
 - Creates a new folder in current directory, and copies all information of the specified URL
 - `git clone [URL] name`: adding 'name' creates a folder with named 'name', and clones the content of the URL
 
-### 2.1 Adding/checking remote repositories
+### 3.2.1 Adding/checking remote repositories
 ```git remote```
 - tells you the names of the remote repositories you have configured
 ..* adding -v (verbose) will tell you the URL. Note: `origin` is the default name of the repository you cloned your local file from.
@@ -84,7 +100,7 @@ example: `git remote add origin https://github....`
 - changes the name of the remote file from old to new name
 
 
-### 2.2 Pulling data from remote repositories
+### 3.2.2 Pulling data from remote repositories
 ```git fetch [remote repository name] [branchname]```
 - updates the 'origin/master' local Git folder from the data of the 'master' remote repository (Github). Only the .git file is changed, not the working directory. 
 ex: `git fetch origin master`
@@ -97,7 +113,7 @@ ex: `git merge origin master`
 - the pull command is equivalent of (fetch & merge)
 ex: `git pull origin maser`
 
-### 2.3 Pushing data upstream
+### 3.2.3 Pushing data upstream
 ```git push [remote repository name] [branchname]```
 - "pushes" or updates the local data to the virtual repository. (will only work if you have access and if nobody has pushed since the last time you pulled code. If the code has been updated, you'll need to pull the code, change it, and then push it.)
 - Adding `-u` creates a bond between 'origin/master' (local Git repository) and the virtual 'master' on Github. `-u` needs to be called one time only to do the bonding.
@@ -105,12 +121,12 @@ ex: `git pull origin maser`
 #### Force-pushing (Use very carefully)
 In the cases we are sure
 
-### 2.4 Tagging
+### 3.2.4 Tagging
 ```git tag -a [tag] -m [tag message]```
 - sets up an annotated tag that will be associated with a specific commit
 ex: `git tag -a v1.1 -m 'This is the 1.1 version'`
 
-## 3. Working with Branches
+## 3.3. Working with Branches
 Branching allows you to work in multiple tasks at the same time. For example: you are building some feature for an app. You create a branch "feature 1", and start working on it; the main "production" branch (Master) is unchanged. Then, you need to start working on another urgent feature. You create a branch from the master and start working on it.
 Useful link: https://git-scm.com/book/en/v1/Git-Branching-Basic-Branching-and-Merging
 	
