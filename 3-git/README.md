@@ -3,15 +3,15 @@
 This document gives an overall picture of `Git`, assuming no previous background.
 
 ### Table of contents:
-[#### 3.0 Git basics](##3.0.-git-basics)
+[3.0 Git basics](#3.0.-git-basics)
 
-[#### 3.1 Step 1: Working in the local repository](##3.1.-working-in-the-local-repository)
+[3.1 Step 1: Working in the local repository](#3.1.-working-in-the-local-repository)
 - Commands treated: `git init`, `git status`, `git diff`, `git add`, `git commit`, `git log`
 
-[#### 3.2 Step 2: Working with remote repositories](##3.2.-working-with-remote-repositories)
+[3.2 Step 2: Working with remote repositories](#3.2.-working-with-remote-repositories)
 - Commands treated: `git clone`, `git remote add`, `git fetch`, `git merge`, `git push`
 
-[#### 3.3 Step 3: Working with branches](##3.3.-working-with-branches)
+[3.3 Step 3: Working with branches](#3.3.-working-with-branches)
 - Commands treated: `git clone`, `git remote add`, `git fetch`, `git merge`, `git push`
 
 This document lists useful commands to be used while using `Git`: from initializing the project to work with branches and pushing code to GitHub. This file assumes no previous background.
