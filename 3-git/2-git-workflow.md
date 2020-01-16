@@ -2,6 +2,8 @@
 
 This document summarizes the 'typical' workflow of commands used while working with `Git`. This document assumes the use of GitHub.
 
+Note: all the commands listed on this document will work on a terminal after downloading `Git`.
+
 ## Step 1: Initialize the project (`git init` or `git clone`)
 #### Step 1.1: new Repository
 Open a new Repository in GitHub, give it a name.

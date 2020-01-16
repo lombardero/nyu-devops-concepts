@@ -16,7 +16,7 @@ This section documents the elementary tools required to get started on the cours
 
 (To be done)
 
-#### 2 - Unix
+#### [2 - Unix](https://github.com/lombardero/nyu-devops-concepts/tree/master/2-unix)
 This part documents the Unix commands that will be used during the course.
 
 (To be done)
@@ -24,7 +24,7 @@ This part documents the Unix commands that will be used during the course.
 #### [3 - Git](https://github.com/lombardero/nyu-devops-concepts/tree/master/3-git)
 The Git section explains why `Git` is useful, how to use it, and some concepts on what goes on in the background.
 
-#### 4 - Vagrant
+#### [4 - Vagrant](https://github.com/lombardero/nyu-devops-concepts/tree/master/4-vagrant)
 
 (To be done)
 
