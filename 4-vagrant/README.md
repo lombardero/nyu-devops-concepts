@@ -4,7 +4,7 @@ The documentation is divided in two parts:
 - [Part 1](#1---useful-unix-commands-to-run-vagrant): the Unix commands (to be run in the terminal) in order to run Vagrant
 - [Part 2](): the syntax of the `Vagrantfile` (Ruby language) that will allow us to launch the Virtual Machines as coded.
 
-## 1 - Useful unix commands to run Vagrant
+## 1 - Useful commands to run Vagrant
 ### 1.1 Launching the VM
 ```vagrant up```
 - initializes the virtual machine, with the specifications of the Vagrantfile on the current folder
