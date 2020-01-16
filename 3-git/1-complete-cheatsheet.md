@@ -4,8 +4,10 @@ This document is a commented cheatsheet of `Git`, divided in three parts:
 
 [1: Working in the local repository](#1-working-in-the-local-repository)
 - Commands treated: `git init`, `git status`, `git diff`, `git add`, `git commit`, `git log`
+
 [2: Working with remote repositories](#2-working-with-remote-repositories)
 - Commands treated: `git clone`, `git remote add`, `git fetch`, `git merge`, `git push`
+
 [3: Working with branches](#3-working-with-branches)
 - Commands treated: `git checkout`, `git merge`, `git branch`, `git rebase`
 
@@ -149,6 +151,15 @@ This is a useful [link](https://git-scm.com/book/en/v1/Git-Branching-Basic-Branc
 ```git checkout -b [newbranch]```
 - adding `-b` to the checkout command creates a new branch from the current branch AND changes the pointer to work on it
 
+#### Sorting out switching branches issues
+Sometimes, the state of our workspace (the local files) does not match the latest commit statement (this happens when we modify our code without committing). At that time, if we try switching branches (with the `checkout` commit), Git will not allow us to do so to prevent losing data. At that point, we have two possibilities: committing the local changes, or using the `stash` and `pop` commands, described below.
+
+```git stash```
+- takes a snapshot of the current state of the local workspace, saves it (making it recoverable with the `git pop` command), and reverts the state of the local files to match with the last `commit` statement of the branch. Once the `git stash` command has been done, it will be possible to switch branches (since the local workspace matches the contents of the branch in the `.git/` folder).
+
+```git pop```
+- sets back the state of the local workspace as it was before running the `git stash` command.
+
 ### 3.2 Merging branches
 #### Successful merges
 ```git merge [branchname]```
@@ -198,5 +209,3 @@ Now, if we run `rebase`, we will add the changes made to master to our own branc
                        (b') --- (c')         new-branch
 ```
 Note that all merge conflicts coming from rebasing would have to be sort out manually as well.
-
-(To be added: `git stash`, `git pop`)
