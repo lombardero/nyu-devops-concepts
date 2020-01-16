@@ -2,13 +2,13 @@
 
 This document is a commented cheatsheet of `Git`, divided in three parts:
 
-### [1: Working in the local repository](#1-working-in-the-local-repository)
+### [1: Working in the local repository](#1-working-in-the-local-repository-1)
 - Commands treated: `git init`, `git status`, `git diff`, `git add`, `git commit`, `git log`
 
-### [2: Working with remote repositories](#2-working-with-remote-repositories)
+### [2: Working with remote repositories](#2-working-with-remote-repositories-1)
 - Commands treated: `git clone`, `git remote add`, `git fetch`, `git merge`, `git push`
 
-### [3: Working with branches](#3-working-with-branches)
+### [3: Working with branches](#3-working-with-branches-1)
 - Commands treated: `git checkout`, `git merge`, `git branch`, `git rebase`
 
 A simplified Git cheatsheet can be found [here](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf).
