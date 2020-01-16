@@ -2,13 +2,13 @@
 
 This document is a commented cheatsheet of `Git`, divided in three parts:
 
-[1: Working in the local repository](#1-working-in-the-local-repository)
+### [1: Working in the local repository](#1-working-in-the-local-repository)
 - Commands treated: `git init`, `git status`, `git diff`, `git add`, `git commit`, `git log`
 
-[2: Working with remote repositories](#2-working-with-remote-repositories)
+### [2: Working with remote repositories](#2-working-with-remote-repositories)
 - Commands treated: `git clone`, `git remote add`, `git fetch`, `git merge`, `git push`
 
-[3: Working with branches](#3-working-with-branches)
+### [3: Working with branches](#3-working-with-branches)
 - Commands treated: `git checkout`, `git merge`, `git branch`, `git rebase`
 
 A simplified Git cheatsheet can be found [here](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf).
@@ -16,12 +16,12 @@ A simplified Git cheatsheet can be found [here](https://github.github.com/traini
 ## 1. Working in the Local Repository
 ### 1.0 Initializing
 ```git init```
-- creates an empty Git repository (`.git/`) that gathers all committed files from the working document (see *Git basics*).
+- creates an empty Git repository (`.git/`) that will gather all committed files from the working document (see [Git basics](https://github.com/lombardero/nyu-devops-concepts/blob/master/3-git/0-git-basics.md)).
 
 #### Basic files
 Apart from our codebase, it is a good idea to initialize each project with two additional files:
 - `README.md` file: uses the [Markdown language](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf) to render a description of the Project in GitHub.
-- `.gitignore` file: a list of the files we do not want to upload to Github.
+- `.gitignore` file: a list of the files we do not want Git to keep track of (and we do not want in GitHub).
 
 #### Note on `gitignore` file
 The `.gitignore` file contains all files and terminations that should be ignored by `Git` (those files you might have or want in your local repository but you do not need in your code, such as `VS Code` files '`.vscode'`.)
@@ -36,14 +36,14 @@ An example of `.gitignore` file can be found [here](https://gist.github.com/octo
 Conceptually, the Staging Area is what `Git` calls the list of 'files to be added later to my code'. 
 The Staging Area allows us to keep track of the current changes of our code in real time. When a file added to the staging area, `Git` will take a snapshot of that file; `Git` will then be able to know if we have made changes on that file.
 
-Once it is on the staging area, the file will be ready to be Committed (Saved on the `Git` tree, see point 1.2).
+Once it is on the staging area, the file will be ready to be Committed (Saved on the `Git` tree, see point [1.2](#12-comitting-files-from-staging-area-to-local-repository)).
 
 #### Checking status
 ```git status```
-- compares the current state of the local files with the files on the staging area and outputs the differences. It will also let you know the branch you are currently working on, and the files already added to the Staging area.
+- compares the current state of the local files with the files on the staging area and outputs the differences. This command will also let us know the branch we are currently working on, and the files already in the Staging area.
 
 ```git diff```
-- Tells you the files you've changed locally but not yet staged
+- Tells us the files we have changed locally but not yet staged.
 
 #### Adding files to Staging area
 ```git add [file]```
@@ -62,21 +62,50 @@ Once it is on the staging area, the file will be ready to be Committed (Saved on
 Note: if you delete (using the `rm` command) the file (`git rm [previous_file_name]`) then add it again with another name(`git add [new_file_name]`), `Git` will still figure out the file is being renamed, but the `mv` command is the explicit way of doing so (preferred way).
 
 ### 1.2 Comitting files from Staging area to Local Repository
-Once the local changes have been sent to Staging area (git has taken a 'snapshot' of the files), these snapshots are ready to be saved in the local git repository. Once in the local repository, any saved state will be retrievable at any time.
+Once the local changes have been sent to Staging area (git has taken a 'snapshot' of the files), these snapshots are ready to be saved in the local `.git/` repository. Once in the local repository, any saved state will be retrievable at any time.
 
 #### Adding files to the Local Repository
 ```git commit -m '<commit description>'```
-- Takes a "snapshot" of all files listed in the staging area, and saves a copy in to the local `.git/` repository.
+- Saves the snapshots the files in the staging area in to the local `.git/` repository.
 
-Note: In the background, what `Git` does on each `commit` statement is saving the changes done to the files at each step in an optimized format. The files do not get copied over and over, what is saved are only the lines of code that were deleted, and the new lines added from the previous version. That way, files can be 're-built' following any of the steps of each `commit` statement, from the initial state. Each `commit` statement receives a hash code, which will allow us to identify it, and retrieve it anytime we wish so.
+Note: In the background, what `Git` does on each `commit` statement is saving the changes done to the files in an optimized format. The files do not get copied over and over, what is saved are only the lines of code that were deleted, and the new lines added from the previous version. That way, files can be 're-built' following any of the steps of each `commit` statement, from the initial state. Each `commit` statement receives a hash code, which will allow us to identify it, and retrieve it anytime we wish so.
 - `-m` lets you add a comment to the commit (Important, so you can keep track of what you did in that commit). Note that `Git` will force you to add the message if it is not included.
 
 #### Retrieving commit history
 ```git log```
 - Outputs the history of commit statement done in the local repository. This command is very useful to understand where we are in the `Git` tree history; it can be used to retrieve the `commit` code and understand the branch tree.
-Useful options: 
-- `git log --pretty=oneline` displays all the information in one line
+Useful options (can be combined): 
+- `git log --oneline` displays all the information in one line
+- `git log --decorate` adds branch information
+- `git log --all` shows all branches
+- `git log --graph` creates a visual graph of the branches and merges
 - `git log --pretty=format:" %s" --graph` displays the info demanded ("%h" prints the commit hash, "%s" prints the subject) in a visual way showing the branch and merge history.
+
+#### Creating aliases
+It is useful to create aliases for long commands (such as the `git log` ones).
+
+```git config --global alias.[alias] "[command]"```
+- Creates an `[alias]` for the `[command]` we requested. 
+
+Example: running `git config --global alias.lg "log --oneline --decorate --all --graph"` creates an alias `lg` that will be equivalent of `og --oneline --decorate --all --graph`.
+
+### 1.3 Undoing commit statements
+#### Undoing commits on entire project
+```git reset --soft```
+- Deletes the last commit statement saved on the local repository (the `.git/` folder), but saves the state on the Staging area (that way, if we run `git commit` again the local repository will be back to the point where it was before running `git reset`).
+
+```git reset --hard```
+- Deletes the last commit statement saved on the local repository definitely, in a way that is not retrievable (this command should be run once we are completely sure we do not want to keep the last commit).
+
+#### Undoing commits on specific files
+```git checkout -- [file]```
+- Discards the last changes done to `[file]`, and reverts its state back to where it was in the last `commit` statement.
+
+```git checkout [hashcode] -- [file]```
+- Discards the last changes done to `[file]`, and reverts its state back to where it was in the `commit` statement corresponding to the `[hashcode]` entered. Example: `git checkout 8ae67 -- my_file.txt`
+
+```git reset --soft```
+- Deletes the last commit statement on the `.git/` folder, but 
 
 ## 2. Working with Remote Repositories
 ### 2.0 Configuring
@@ -145,8 +174,13 @@ This is a useful [link](https://git-scm.com/book/en/v1/Git-Branching-Basic-Branc
 ```git branch [newbranch]```
 - creates a new branch named 'newbranch' from the last commit of the current branch we are in. If we are not in `master` and want to make a branch FROM it, we must switch back to `master` (command: `git checkout master`) before running the above command and THEN create the new branch.
 
+```git branch -a```
+- Tells us the current existing branch names (`-a` stands for 'all', and will output both local and remote branches)
+
 ```git checkout [namebranch]```
 - Switches to the branch spacified. The way Git handles it is by changing the pointer of the HEAD object, which will make all commits done from now on will go on the branch specified (note that if we have uncommitted changes that clash with the branch we are switching to, Git will not allow us to do the switch; to sort that see the `git stash` command).
+
+Note: once we run `checkout`, the local files on our workspace will also be updated to match the contents of the branch we are swithching to.
 
 ```git checkout -b [newbranch]```
 - adding `-b` to the checkout command creates a new branch from the current branch AND changes the pointer to work on it
