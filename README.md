@@ -21,7 +21,7 @@ This part documents the Unix commands that will be used during the course.
 
 (To be done)
 
-[#### 3 - Git](https://github.com/lombardero/nyu-devops-concepts/tree/master/3-git)
+[3 - Git](https://github.com/lombardero/nyu-devops-concepts/tree/master/3-git)
 The Git section explains why `Git` is useful, how to use it, and some concepts on what goes on in the background.
 
 #### 4 - Vagrant
