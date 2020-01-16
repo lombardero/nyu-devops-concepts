@@ -1,7 +1,8 @@
 # UNIX COMMANDS CHEATSHEET
 
-This document lists useful commands to be used while working on a UNIX shell: from basic file and folder navigation, to running processes.
+This document lists useful commands to be used while working on a UNIX shell: from basic file and folder navigation, to running processes. 
 
+Note: all the commands listed on this document will only work on a UNIX terminal.
 
 ## 1 - Basic navigation
 ### 1.0 Get help
