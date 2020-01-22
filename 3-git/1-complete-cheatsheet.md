@@ -28,6 +28,7 @@ The `.gitignore` file contains all files and terminations that should be ignored
 The file contains a list of all terminations, folders, files to be ignored. The format is explained below:
 - use `*.<extension>` to ignore all files ended up in the `<extension>` specified
 - use `<folder>/` to ignore all files inside a folder
+- use `**/<filename>` to ignore all files or folders named `<filename>`
 - use `<folder>/<filename>` to ignore a specific file
 
 An example of `.gitignore` file can be found [here](https://gist.github.com/octocat/9257657).
