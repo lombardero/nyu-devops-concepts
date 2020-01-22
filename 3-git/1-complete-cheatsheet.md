@@ -53,6 +53,12 @@ Once it is on the staging area, the file will be ready to be Committed (Saved on
 - adds all modified files of the current folder in the Staging area
 
 #### Removing files from Staging area
+```git reset HEAD -- [file]```
+- Removes from the staging area a `[file]` we previously added.
+
+Note: this command should not be confused with the `rm` one, explained below: `git reset HEAD` simply 'resets' the state of the Staging area for the specific `[file]` we select (that `[file]` must have been previoulsy added to the staging area (with the command `git add` for the command to work); `git rm` is used to 'delete' or 'not keep track' anymore of a file that we have committed in the past (we are telling `Git` not to keep track of it anyore in future commits).
+
+#### Removing files from Git tree
 ```git rm [file]```
 - Remove: Tells `Git` to not keep track of changes in `[file]` anymore (removes it from the `Git` tree)
 
