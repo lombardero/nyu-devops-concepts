@@ -1,7 +1,7 @@
 # VAGRANT 
 
 The documentation is divided in two parts:
-- [Part 1](#1---useful-unix-commands-to-run-vagrant): some useful commands (to be run in the terminal) to run Vagrant
+- [Part 1](#1---useful-commands-to-run-vagrant): some useful commands (to be run in the terminal) to run Vagrant
 - [Part 2](): the syntax of the `Vagrantfile` (Ruby language) that will allow us to launch the Virtual Machines as coded.
 
 ## 1 - Useful commands to run Vagrant
