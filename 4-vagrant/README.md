@@ -7,7 +7,7 @@ The documentation is divided in two parts:
 ## 1 - Useful commands to run Vagrant
 ### 1.1 Launching the VM
 ```vagrant up```
-- initializes the virtual machine, with the specifications of the Vagrantfile on the current folder
+- initializes the virtual machine, with the specifications of the Vagrantfile since last time we ran `provision`
 
 ```vagrant provision```
 - downloads the required packages to make the virtual machine work (checks for any updates in the Vagrantfile).
