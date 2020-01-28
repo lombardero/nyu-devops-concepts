@@ -10,8 +10,6 @@ The content of the repository is listed below.
 #### [0 - Basic concepts](https://github.com/lombardero/nyu-devops-concepts/tree/master/0-basic-concepts)
 This part explains some basic CS concepts used on the course, such as Network and Unix basics.
 
-(To be done)
-
 #### [1 - Get started](https://github.com/lombardero/nyu-devops-concepts/tree/master/1-get-started)
 This section documents the elementary tools required to get started on the course (such as a text editor and command line interpreter), as well as some resources and proposed tools.
 
