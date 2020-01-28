@@ -1,7 +1,7 @@
 # GET STARTED: BASIC DEVELOPMENT TOOLS
 
 ## 1 Text editor
-The first component required to be a killer programmer is a good text editor. The text editor is the tool you will use to write all your lines of code, visualize them, check them in real time, and integrate them. It is where you will spend hours trying to find that bug you are struggling to correct; your main tool as a programmer. And that is why you need the best editor you can find. Here are some recommendations.
+A key component to programming is a good text editor. The text editor is the tool you will use to write all your lines of code, visualize them, check them in real time, and integrate them; where you might spend many hours trying to find the reasons why your code does not behave as you planned. And that is why you need the best editor you can find. Here are some recommendations.
 
 ### Recommendation A: VS Code
 Visual Studio Code is Microsoft's text editor. Its main killer features are:

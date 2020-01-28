@@ -7,7 +7,7 @@ The content of the repository is listed below.
 
 ### Contents:
 
-#### 0 - Basic concepts
+#### [0 - Basic concepts](https://github.com/lombardero/nyu-devops-concepts/tree/master/0-basic-concepts)
 This part explains some basic CS concepts used on the course, such as Network and Unix basics.
 
 (To be done)
