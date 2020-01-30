@@ -43,6 +43,7 @@ Then, we start working on the new feature. For example, let's say we add some li
 - Again, we run `git status` to confirm everything is fine (we shoud see we modified `app.py` and created a new file `models.py`)
 
 ```git add app.py```
+
 ```git add models.py```
 - We must run the `add` command for all modified and newly created files. After this step we can re-run `git status` to check we have correctly added the files.
 
@@ -70,6 +71,7 @@ There are two ways of ensuring our code does not contain merge conflicts, it sta
 - Fetching the last changes from the `master` branch updates the local `.git/` folder (but not the local workspace) with the changes made by other team members. Note that this step can be done with the `pull` command as well.
 
 After updating `master`, we can return to the branch we were working on: `new-feature`:
+
 ```git checkout new-feature```
 - switches back to the 'new-feature' branch
 
