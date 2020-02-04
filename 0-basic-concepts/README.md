@@ -13,7 +13,7 @@ In a nutshell, the 'kernel' is the central software from a Unix system that mana
 The kernel is responsible of the following tasks:
 - Process scheduling: it decides how the multiple processes take use of the CPU of the machine.
 - Memory management and isolation: the kernel also allocates memory for the running processes. Processes will request the kernel for data to be stored on the RAM, the kernel will allocate a physical spot on the memory, and keep a record of all used locations of the memory for every process; the kernel also ensures that the memory allocations are encapsulated (process A cannot modify any variable stored by process B; actually, it cannot even know the variables that process B has stored).
-- Provision of a file system: a way of storing data on disk (allowin to create, retrieve, update, delete files).
+- Provision of a file system: a way of storing data on disk (allowing to create, retrieve, update, delete files).
 - Creation and termination of processes: the kernel loads a new process into memory and provides the resources it needs (CPU, memory, access to files) once the process is run; once the process is terminated, the kernel ensures the resources used by it are freed again.
 - Access to devices: the kernel manages the access to computer devices (keyboard, mouse, disks, etc.) by the running processes.
 - Network: it sends and receives networking packets on behalf of the processes.
@@ -36,9 +36,9 @@ The 'port' is simply a 16-bit number (which complements the IP address), to orga
 
 As we can see, there is a lot of information in a request (a lot of empty fields), some private data (such as the Computer and browser used by the client), but most importantly, the URL (in the example provided, the URL is `'/'`, or the 'home' URL), and the HTTP Method (a `GET` request in the example, since the client is simply requesting the server to 'read' the `'/'` URL). 
 
-Notes:
-- Servers are structured using **URLs**, which will trigger different functions of the server. The home URL, usually `'/'`, will trigger a response (usually HTML) displaying the home page. Other URLs can be defined to do more complex actions to the server; in this course we will use the `REST API` convention for defining the URLs.
-- **HTTP methods** are used as the second component for triggering different actions in the server (servers will need a method-URL pair to exactly know what to do). The typically used methods are `GET` (read data), `PUT` (update some data on the server), `POST` (send some data on the server to create a resource), and `DELETE` (delete some resource).
+Note: A server needs two fields to know how to process a request: the **HTTP method** (`GET`, `POST`, `PUT`, `DELETE`, etc.), and the **URL** (always `'/<something>'`). Once the server knows both fields, it will know which functions on the backend to trigger to prepare a response back to the client. For example, a `GET` request to the home URL `'/'` should trigger the function that sends the client to the home page. **URLs** and **HTTP methods** in this course will be defined using the `REST API` convention for defining the URLs.
+
+Note 2: The most frequently used methods are `GET` (read data), `PUT` (update some data on the server), `POST` (send some data on the server to create a resource), and `DELETE` (delete some resource).
 
 #### HTTP responses
 Once the server has treated a request, it will send a response to the client; responses can have many forms, and are sent in a similar object as the request. The two main components of a  response is the **header** and the **body**.
@@ -47,7 +47,7 @@ The **header** contains information about the message itself; the minimum inform
 - the `Content-Type`: which states the format used on the body of the message, so that the client can decode it. For example, setting `Content-Type` to `application/json` (on the header: `Content-Type: application/json`) will let the client know that the message sent back is in JSON format.
 - the `Status`: which tells the client information about how the server handled the request. For example, `200 OK` tells the client the server properly understood the request, and sent it back. Find the entire list [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
 
-The **body** is the message the server is sending to the client. It can have many formats: plain text, HTML, JSON... The browser will be the one who will render the response properly.
+The **body** is the message the server is sending to the client. It can have many formats: plain text, HTML, JSON... The browser understands those languages and will render the response properly.
 
 ### 2.3 SSH
 SSH stands for 'Secure Shell' protocol. It is an encrypted protocol (for security reasons) that allows a machine to take control over another machine. In the DevOps course, we will use the SSH protocol to control and run commands on the Virtual Machines we create with Vagrant.

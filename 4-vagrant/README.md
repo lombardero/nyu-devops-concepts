@@ -5,15 +5,17 @@ The documentation is divided in two parts:
 - [Part 2](): the syntax of the `Vagrantfile` (Ruby language) that will allow us to launch the Virtual Machines as coded.
 
 ## 1 - Useful commands to run Vagrant
+These commands must be run in the terminal in order to control a Vagrant-generated VM.
+
 ### 1.1 Launching the VM
 ```vagrant up```
 - initializes the virtual machine, with the specifications of the Vagrantfile since last time we ran `provision`
 
 ```vagrant provision```
-- downloads the required packages to make the virtual machine work (checks for any updates in the Vagrantfile).
+- checks the Vagrantfile, and downloads the required packages (if any is missing) to make the virtual machine work.
 
 ```vagrant reload --provision```
-- restarts vagrant with new Vagrantfile config, provisioning all required packages (provision). This command is useful to reload the VM after we modified the Vagrantfile.
+- restarts Cagrant VM with a new Vagrantfile configuration, provisioning all required packages (same as running `provision`). This command is useful to reload the VM after we modified the Vagrantfile.
 
 ### 1.2 Connecting to the VM
 ```vagrant ssh```
