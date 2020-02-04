@@ -4,7 +4,7 @@ This document lists useful commands to be used while working on a UNIX shell: fr
 
 Note: all the commands listed on this document will only work on a UNIX terminal.
 
-## 1 - Basic navigation
+## 1 - Basic commands
 ### 1.0 Get help
 ```<command> --help```
 - Will output syntax guidelines to run any command
@@ -12,11 +12,13 @@ Note: all the commands listed on this document will only work on a UNIX terminal
 ### 1.1 File and folder navigation
 #### Move through folders
 ```cd <path>```
-- cd stands for "change directory", moves to the specified absolute or relative path. Example: `cd /folder` moves to `folder`. Note: use `cd `, and press `Tab` to jump to possible options. In some terminals, using the `Tab` key after writing `cd ` (with a space) will display all the available new destinations on the current folder.
+- cd stands for "change directory"; this command moves the folder the terminal is looking to into to the specified absolute or relative path. Example: `cd /folder` will move to `folder` (which should be inside the folder we are currently looking to).
 - `cd ..` moves to the upwards (or 'preceding') directory
 
+Note: in some terminals, typing `cd ` (with a space), and pressing `Tab` allows the terminal to jump between available sub-folders possible options.
+
 ```pwd```
-- stands for "Print Working Directory": returns address of current directory
+- stands for "Print Working Directory": returns the absolute path of the current directory
 
 #### Show folder contents
 ```ls```
@@ -33,8 +35,18 @@ Options:
 - `mv <old-file-name> <new-file-name>` renames file
 - `mkdir <new-directory-name>` creates a new directory in current path
 
-### 2 - Environment variables
-'Environment variables' are variables stored in special folders, in order to only reveal its contents locally, and if requested.
+### 1.2 - Check file contents
+#### The `cat` command
+The command `cat` is one of the most useful commands to quickly check on the terminal the contents of a file. `cat` stands for 'concatenate': the contents of the file will be 'concatenated' and shown in the terminal.
+
+```cat <filename>```
+- Prints on the terminal the contents of `<filename>`
+
+Additional arguments we can use for `cat`:
+- `cat -n <filename>` will print the contents of the file with a number showing the line number
+
+## 2 - Environment variables
+'Environment variables' are variables stored in special folders, in order to only reveal its contents locally (on the terminal), and if requested.
 
 Environment variables very useful to store confidential data such as passwords and API keys, which we do not want to reveal in our source code or uploaded in GitHub, for example. They can also be used to run code in different machines, where the value of `HOME` is different, for example.
 
@@ -45,8 +57,11 @@ Note: in Unix systems, global environment variables are stored in the `/etc/envi
 - `HOME` is the absolute location of the user's home directory
 
 #### Get list of environment variables
-- `printenv` or `env` gives us the list of currently set environment variables
-- `set` displays the entire list of set or unset values of shell options (environment variables). Gives a much more complete list than  `env`, with all predefined evironment variables (even those that have no value assigned to it)
+```printenv```
+- prints in the terminal the list of currently set environment variables (alternatively, we can use the command `env`)
+
+```set```
+- displays the entire list of set or unset values of shell options (environment variables). Gives a much more complete list than  `env`, with all predefined evironment variables (even those that have no value assigned to it)
 
 #### View contents of environment variables
 ```echo $<environment-variable>```

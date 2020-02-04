@@ -1,14 +1,14 @@
 ## 0 Git basics
 ### 0.1 Why is `Git` useful?
-`Git` makes it easy to handle code written by a team. First, by enabling multiple people to work in different parts of the code without interfering with one another thanks to branches. Secondly, by allowing recoverability; `Git` keeps track of the changes made to the code at any state, and makes it easy to recover any step the code has been in.
+`Git` makes it easy to handle code written by a team. First, by enabling multiple people to work in different parts of the code without interfering with one another thanks to branches. Secondly, by allowing recoverability; `Git` keeps track of the changes made to the code at any state, and makes it easy to recover any step the code has been in. Additionally, it is designed in a way that is nearly impossible to loose lines of code by mistakes.
 
 The usefulness of `Git` has brought complimentary tools such as `GitHub`, which added many additional features allowing open-sourcing, Continuous Integration and Delivery, and much more.
 
 ### 0.2 Basic concepts
 ####  The `.git/` folder: where data is stored
-Instead of keeping a snapshot of the latest state of the files, `Git` stores documents as an overlay of changes, in a tree structure inside the `.git/` folder (local repository). The `.git/` folder is a hidden folder saved in the path we have told `Git` to initialize the project (either with `git init` or `git clone`; see sections 1 and 2).
+Instead of keeping a snapshot of the latest state of the files (as a regular computer does with files), `Git` stores documents as an overlay of changes, in a tree structure inside the `.git/` folder (local repository). The `.git/` folder is a hidden folder saved in the path we have told `Git` to initialize the project (either with `git init` or `git clone`; see sections 1 and 2).
 
-- Example of how files are stored: From an original file of 2000 lines of code, if we remove 10 lines of code and add 50 and then save the file (or 'commit' it in `Git` jargon), instead of replacing the 2000 lines of code file with another file with 2040 lines, `Git` will keep the original file and place on top of it a new file mentioning the changes in the code (the 10 lines removed and the 50 added). That way, any step that was saved in the `.git/` folder is retrievable.
+- *Example of how files are stored: From an original file of 2000 lines of code, if we remove 10 lines of code and add 50 and then save the file (or 'commit' it in `Git` jargon), instead of replacing the 2000 lines of code file with another file with 2040 lines, `Git` will keep the original file and place on top of it a new file mentioning the changes in the code (the 10 lines removed and the 50 added). That way, any step that was saved in the `.git/` folder is retrievable.*
 
 Note: it is important to distinguish our working files with our local files inside the `.git/` folder. Our 'local' files are those saved in the working folder, the ones we open with the text editor and modify. `Git` will save (when we `commit`)  snapshots of these local files in the `.git/` folder when we tell it so. `Git` will also retrieve the saved files in the `.git/` folder (for example, when we change to another branch), and update our local files accordingly.
 
