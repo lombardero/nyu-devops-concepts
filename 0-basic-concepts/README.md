@@ -1,4 +1,4 @@
-# BASIC CS CONCEPTS FOR THE COURSE
+# COMPUTER SCIENCE REFRESHER
 
 This document contains an intuitive explanation of some elemental Computer Science concepts that are used in the course. It is intended as a 'live' document, completed each time a student has a doubt about a concept.
 
@@ -12,6 +12,8 @@ This part will have a (very) basic overview of the parts of a computer.
 
 ## 1.1 Basic hardware components
 To understand why the software works the way it does, it can be useful to understand the main 'physical' components of a computer: the CPU, the Hard Drive, and the RAM. A very basic overview is explained below.
+
+This [5-minute video from TED-Ed](https://www.youtube.com/watch?v=p3q5zWCw8J4) explains it amazingly well.
 
 ### 1.1.1 The CPU
 CPU stands for 'Central Processing Unit', and acts as the 'brain' of the computer. It is responsible for running the software and performing the data manipulation in the computer. The CPUs installed in modern computers are optimized to be versatile and run many kinds of processes in parallel. 
