@@ -98,7 +98,7 @@ To test the server, we want to be able to communicate with it from our browser (
 
 The above diagram shows the local machine (light-blue), inside of which runs a browser tab and a VM (black box); inside the VM, a Flask server is running and sending its outputs to the `localhost:8080` inside the VM (represented by the red arrow). The green dot represents the virtual address `localhost:8080` in the VM (which is where the data is sent). The browser, then, when the address `localhost:8080` is requested, will try to communicate with the `localhost:8080` of the local machine (Not the VM!), represented by the other green dot. Both dots are not connected, we cannot access the server! Here is when 'port forwarding' comes handy: 
 
-![alt text](https://github.com/lombardero/nyu-devops-concepts/tree/master/0-basic-concepts/assets/port-fwd2.png "Port Forwarding 2")
+![alt text](#/assets/port-fwd2.png "Port Forwarding 2")
 
 Port forwarding means asking the VM to foward any traffic of data received on its `localhost:8080` to the `localhost:8080` of the local device (represented by the green arrow), hence connecting the browser and the server running inside the VM.
 
