@@ -63,8 +63,7 @@ Each operating system has its own 'language', and way of storing devices. A **hy
 #### Virtual Machines (VMs)
 Virtual Machines are simply an emulation of an operating system the believes it runs in an isolated physical device, but it is really running inside another computer thanks to a hypervisor. Let's visualize it with the below diagram:
 
-![VM Diagram Image]
-(https://github.com/lombardero/nyu-devops-concepts/tree/master/0-basic-concepts/assets/VM-diagram.png)
+![VM Diagram Image](https://github.com/lombardero/nyu-devops-concepts/tree/master/0-basic-concepts/assets/VM-diagram.png)
 
 Boxes represent different layers of complexity, talking to each other. The 'Host OS' (kernel) layer manages the Infrastructure (CPU, RAM, etc.), the Hypervisor talks to the Host OS, creating three 'encapsulations' (divisions of the Infrastructure) and 'translating' the Host OS commands to Native Linux (Ubuntu), Windows, and RedHat (following the example.)
 
