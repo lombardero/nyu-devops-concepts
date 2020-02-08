@@ -4,7 +4,7 @@ This document contains an intuitive explanation of some elemental Computer Scien
 
 ### Contents of the document
 #### 1 - [Computing Basics](#1---computing-basics)
-#### 2 - [Networking basics](#2--network-basics)
+#### 2 - [Networking basics](#2---networking-basics)
 
 ## 1 - Computing Basics
 This part will have a (very) basic overview of the parts of a computer.
@@ -63,7 +63,7 @@ Each operating system has its own 'language', and way of storing devices. A **hy
 #### Virtual Machines (VMs)
 Virtual Machines are simply an emulation of an operating system the believes it runs in an isolated physical device, but it is really running inside another computer thanks to a hypervisor. Let's visualize it with the below diagram:
 
-![VM Diagram Image](https://github.com/lombardero/nyu-devops-concepts/tree/master/0-basic-concepts/assets/VM-diagram.png)
+![Alt text](https://github.com/lombardero/nyu-devops-concepts/blob/master/0-basic-concepts/assets/VM-diagram.png)
 
 Boxes represent different layers of complexity, talking to each other. The 'Host OS' (kernel) layer manages the Infrastructure (CPU, RAM, etc.), the Hypervisor talks to the Host OS, creating three 'encapsulations' (divisions of the Infrastructure) and 'translating' the Host OS commands to Native Linux (Ubuntu), Windows, and RedHat (following the example.)
 
@@ -94,11 +94,11 @@ In our project, we will run a VM running UNIX (which will be controlled using a 
 
 To test the server, we want to be able to communicate with it from our browser (by the browser and going to the `localhost:8080` address). However, this will not work, since the server will be running inside of the VM, and our browser will 'look' inside of our local machine. Let's explain it with a visual example:
 
-![Alt text](assets/fwd-port1.png)
+![Alt text](https://github.com/lombardero/nyu-devops-concepts/blob/master/0-basic-concepts/assets/port-fwd1.png)
 
 The above diagram shows the local machine (light-blue), inside of which runs a browser tab and a VM (black box); inside the VM, a Flask server is running and sending its outputs to the `localhost:8080` inside the VM (represented by the red arrow). The green dot represents the virtual address `localhost:8080` in the VM (which is where the data is sent). The browser, then, when the address `localhost:8080` is requested, will try to communicate with the `localhost:8080` of the local machine (Not the VM!), represented by the other green dot. Both dots are not connected, we cannot access the server! Here is when 'port forwarding' comes handy: 
 
-![alt text](/assets/port-fwd2.png "Port Forwarding 2")
+![Alt text](https://github.com/lombardero/nyu-devops-concepts/blob/master/0-basic-concepts/assets/port-fwd2.png)
 
 Port forwarding means asking the VM to foward any traffic of data received on its `localhost:8080` to the `localhost:8080` of the local device (represented by the green arrow), hence connecting the browser and the server running inside the VM.
 
