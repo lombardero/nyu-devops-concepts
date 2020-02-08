@@ -94,11 +94,11 @@ In our project, we will run a VM running UNIX (which will be controlled using a 
 
 To test the server, we want to be able to communicate with it from our browser (by the browser and going to the `localhost:8080` address). However, this will not work, since the server will be running inside of the VM, and our browser will 'look' inside of our local machine. Let's explain it with a visual example:
 
-![alt text](#/assets/port-fwd1.png "Port Forwarding 1")
+![alt text](/assets/port-fwd1.png "Port Forwarding 1")
 
 The above diagram shows the local machine (light-blue), inside of which runs a browser tab and a VM (black box); inside the VM, a Flask server is running and sending its outputs to the `localhost:8080` inside the VM (represented by the red arrow). The green dot represents the virtual address `localhost:8080` in the VM (which is where the data is sent). The browser, then, when the address `localhost:8080` is requested, will try to communicate with the `localhost:8080` of the local machine (Not the VM!), represented by the other green dot. Both dots are not connected, we cannot access the server! Here is when 'port forwarding' comes handy: 
 
-![alt text](#/assets/port-fwd2.png "Port Forwarding 2")
+![alt text](/assets/port-fwd2.png "Port Forwarding 2")
 
 Port forwarding means asking the VM to foward any traffic of data received on its `localhost:8080` to the `localhost:8080` of the local device (represented by the green arrow), hence connecting the browser and the server running inside the VM.
 
