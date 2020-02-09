@@ -2,7 +2,7 @@
 
 This document contains an intuitive explanation of some elemental Computer Science concepts that are used in the course. It is intended as a 'live' document, completed each time a student has a doubt about a concept.
 
-## Contents of the document
+## Contents of the document:
 
 #### 1 - [Computing Basics](#1---computing-basics)
 #### 2 - [Networking basics](#2---networking-basics)
@@ -13,7 +13,7 @@ This part will have a (very) basic overview of the parts of a computer.
 ## 1.1 Basic hardware components
 To understand why the software works the way it does, it can be useful to understand the main 'physical' components of a computer: the CPU, the Hard Drive, and the RAM. A very basic overview is explained below.
 
-This [5-minute video from TED-Ed](https://www.youtube.com/watch?v=p3q5zWCw8J4) explains it amazingly well.
+Also: this [5-minute video from TED-Ed](https://www.youtube.com/watch?v=p3q5zWCw8J4) explains it amazingly well.
 
 ### 1.1.1 The CPU
 CPU stands for 'Central Processing Unit', and acts as the 'brain' of the computer. It is responsible for running the software and performing the data manipulation in the computer. The CPUs installed in modern computers are optimized to be versatile and run many kinds of processes in parallel. 
@@ -21,27 +21,27 @@ CPU stands for 'Central Processing Unit', and acts as the 'brain' of the compute
 Note: A 'process' or a 'thread' is the elementary component of processing. Single programs can run multiple processes at a time. To get the intuition: a very simple python `for` loop, for example, where data is computed as a sequence, is a single process.
 
 ### 1.1.2 The Hard Drive
-The hard drive is the 'long-term' storage of computers. It allows data to be saved in a persistent way (it is not lost if the machine is turn off), but it is also slower to access than the RAM. Data such as Software packages, Photos, or Music is stored in the Hard Drive.
+The hard drive is the 'long-term' storage of computers. It allows data to be saved in a persistent way, so it is not lost if the machine is turn off; the problem with it is that accessing the data is pretty slow (that is when RAM becomes useful). Data such as Software packages, Photos, or Music is stored in the Hard Drive.
 
 Hard Drives can usually be of two types:
 - HDD (hard disk drives), which store data by changing the magnetic orientation of crystals of a rotating disk,
 - and SSD (solid state drices), such as USBs, which store data in a series of switches (transistors) that can be 'on' (1) or 'off' (0).
 
 ### 1.1.3 The RAM
-RAM stands for 'Random Access Memory' in reference of the way the data is stored on it (which is not random, but looks kind of 'disorganized'). The killer feature of the RAM is that the data can be accessed really fast (around 50 times faster than a typical SSD Hard Drive), although the data is usually lost when the machine is turned off. 
+RAM stands for 'Random Access Memory' in reference of the way the data is stored on it, as any bit of information can be retrieved in any order (as opposed to a Hard disk drive, where the needle needs to physically switch between positions). The killer feature of the RAM is that the data can be accessed really fast (around 50-100 times faster than a typical SSD Hard Drive, and 100,000 times faster than an HHD), although the data is usually lost when the machine is turned off. 
 
 RAM is used to speed up processes: typically, when a software is launched, it will load the data (for example, all of the variables created in a Python script) so that the CPU can do its computations quickly. Browsers also use the RAM to store the data they received from the internet, such as images and HTML files, so they do not overload the network by requesting it each time the user opens the browser tab.
 
 #### What does 'Caching' mean?
 'Caching' is a term used in Computer Science that simply means 'Storing in RAM', so it can be accessed faster.
 
-#### What does 'saving the state mean?
-'Saving the state' of a machine simply means saving the contents of the RAM into the Hard Drive, so it can be recovered later. The data in the RAM, also called the 'state' since it is not recoverable if lost, can be stored securely so that 'intermediate steps' of computations can be recovered. 
+#### What does 'saving the state' mean?
+'Saving the state' of a machine simply means saving some of the contents of the RAM into the Hard Drive, so it can be recovered later. The data we usually save is an 'intermediate step' of computation stored in the RAM that we want to recover later. It is called the 'state' since it is not recoverable if lost; when saved in the Hard drive, it becomes recoverable.
 
 Docker containers, for example, always start from a 'saved state' of a previously generated container (which has the software we want already installed and running), so that desired packages are launched as fast as possible.
 
 ### 1.1.4 Other components
-Computers have many other components, such as the Mother Board, which connects the three components mentioned above (CPU, RAM, and Hard Disk), and other components to process media; but these are far beyond the scope of what is needed to understand for the course.
+Computers have many other components, such as the Mother Board, which connects the three components mentioned above (CPU, RAM, and Hard Disk), and other components such as GPU (or 'Graphics Processing Unit) to process media; but these are far beyond the scope of what is needed to understand for the course.
 
 ## 1.2 Software components
 This part overviews how the software controls the hardware. The goal of this part is to understand very basically how a computer is controlled, and explain what a Virtual Machine (VM) is. For that, we need to intuitively understand what is the kernel, and an hypervisor.
@@ -61,10 +61,10 @@ A bit more precisely, in a Unix system, the kernel is responsible of the followi
 #### Hypervisors
 Each operating system has its own 'language', and its way of talking to devices. A **hypervisor** is simply a 'translator layer' that allows a Host Operating System be run in any computer, believing it runs in a physical device (although it doesn't). To achieve this, hypervisors perform two main tasks:
 - They allocate computer resources (CPU, RAM and Hard Disk) so that only virtual machine can use them. It achieves this by 'partitioning' (or splitting) them: one 'slice' for the Host OS, and another for the VM (For example, a RAM of 8GB might be split in 4GB for the Host OS, and 4GB for the VM).
-- 'Translating' orders from one operating system to another. For example, if we emulate a UNIX operating system (as we will do on the course), it try to talk to the hardware using a 'language' that Windows or MAC Operating Systems do not understand. Hypervisors 'translate' UNIX commands (such as 'give me 10MB of RAM for this process') so that a Windows or a MAC operating system can understand it and perform that task, in such a way so that the UNIX system believes that is running in an actual computer (although it is not).
+- 'Translating' orders from one operating system to another. For example, if we emulate a UNIX operating system (as we will do on the course), it will try to talk to the hardware using a 'language' that Windows or MAC Operating Systems might not understand. Hypervisors 'translate' UNIX commands (such as 'give me 10MB of RAM for this process') so that a Windows or a MAC operating system can understand it and perform that task, in such a way so that the UNIX system believes that is running in an actual computer (although it is not).
 
 #### Virtual Machines (VMs)
-Virtual Machines are simply an emulation of an operating system the believes it runs in an isolated physical device, but it is really running inside another computer thanks to a hypervisor. Let's visualize it with the below diagram:
+Virtual Machines are simply an emulation of an operating system that believes it runs in an isolated physical device, but it is really running inside another computer thanks to a hypervisor. Let's visualize it with the below diagram:
 
 ![Alt text](assets/VM-diagram.png)
 
@@ -73,7 +73,7 @@ Boxes represent different layers of complexity, talking to each other. The 'Host
 ##### Why are VMs useful at all?
 VMs are used in DevOps (as well as containers) to create a replicable evironment (such as a UNIX system), so that any member of the team can re-create it without problem and work on it, to avoid the "it seems to only work on your computer" kinds of problem. In the Class, we will use `Vagrant` to create the specifications of the VM we want to start.
 
-VMs are one of the keys in the revolution of Cloud Computing: all instances ran in the Cloud are actual VMs running somewhere in a Data Center. Thanks to them, computing has become much more efficient (saving billions). Now, instead of having to buy a physical computer to run a server, multiple servers are 'squished' into a single computer thanks to virtualization in a 'pay-for-what-you-need' business model.
+VMs are one of the keys in the revolution of Cloud Computing: all instances ran in the Cloud are actual VMs running somewhere in a Data Center. Thanks to them, computing has become much more efficient, saving billions. Now, instead of having to buy a physical computer to run a server, multiple servers are 'squished' into a single computer thanks to virtualization in a 'pay-for-what-you-need' business model.
 
 
 # 2 - Networking Basics
@@ -81,8 +81,8 @@ In this course, we will be running a server, and use a nice trick called 'port-f
 
 ## 2.1 IPs and Ports
 ### 2.1.1 IP addresses
-An IP ('Internet Protocol') address is a unique identifyer of a 'node' on the internet graph (a point that can receive and send information), composed of four 8-bit numbers. IPs are used to specify who should receive a specific chunk of data (or packet).
-IPs can be public (a unique number, used to communicate with the web) or private (which mean it is only accessible locally). An example of a private IP address is `127.0.0.1`, which is known as `localhost` by default. In the course, we will run a 'local' version of the server on our machine on IP `127.0.0.1`, which the browser can access when the IP address or its shortcut are visited.
+An IP ('Internet Protocol') address is a unique identifyer of a 'node' on the internet graph (a point that can receive and send information), composed of four 8-bit numbers. IPs are used to specify who should receive a specific chunk of data (called 'packet').
+IPs can be public (a unique number, used to communicate with the web) or private (which means it is only accessible locally). An example of a private IP address is `127.0.0.1`, which is known as `localhost` by default. In the course, we will run a 'local' version of the server on our machine on IP `127.0.0.1`, which the browser can access when the IP address or its shortcut are visited.
 
 #### What does a 'local' version of the server mean?
 It means that the process (all computations) run by the server will be done in our local device, and the outputs of the server (called 'server responses') will only be accessible locally. This is usually used to debug the server and ensure it behaves as it should. Once some basic functionalities are coded and tested, we can run it in the Cloud (in a Virtual Machine in some Data Center, where a public IP will be given to it) so that we can access it from anywhere in the world.
