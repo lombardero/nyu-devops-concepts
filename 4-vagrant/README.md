@@ -1,9 +1,12 @@
 # VAGRANT 
 
-The documentation is divided in two parts:
-- [Part 0](#0---basics-of-vagrant-and-intuition)
-- [Part 1](#1---useful-commands-to-run-vagrant): some useful commands (to be run in the terminal) to run Vagrant
-- [Part 2](): the syntax of the `Vagrantfile` (Ruby language) that will allow us to launch the Virtual Machines as coded.
+The documentation is divided in three parts:
+
+**[0 - Basics of Vagrant and intuition](#0---basics-of-vagrant-and-intuition)**: why is Vagrant useful at all?
+
+**[1 - Useful commands to run Vagrant](#1---useful-commands-to-run-vagrant)**: some useful commands (to be run in the terminal) to run Vagrant
+
+**[2 - Defining the `Vagrantfile`](#2---defining-the-vagrantfile)**: the syntax of the Vagrantfile (Ruby language) that will allow us to launch the Virtual Machines as coded. (In progress)
 
 ## 0 - Basics of Vagrant and intuition
 Vagrant is one of the components we will use the most during the course, and a very handy DevOps tool. In a nutshell, Vagrant allows us to define a set of basic commands to get a Virtual Machine ready according to a set of specifications (which will be defined in the `Vagrantfile`). 
