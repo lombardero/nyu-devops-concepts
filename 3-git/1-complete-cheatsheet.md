@@ -16,7 +16,7 @@ A simplified Git cheatsheet can be found [here](https://github.github.com/traini
 ## 1. Working in the Local Repository
 ### 1.0 Initializing
 ```git init```
-- creates an empty Git repository (`.git/`) that will gather all committed files from the working document (see [Git basics](https://github.com/lombardero/nyu-devops-concepts/blob/master/3-git/0-git-basics.md)).
+- creates an empty Git repository (`.git/`) that will gather all committed files from the working document (see [Git basics](0-git-basics.md)).
 
 #### Basic files
 Apart from our codebase, it is a good idea to initialize each project with two additional files:

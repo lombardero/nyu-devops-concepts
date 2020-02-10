@@ -109,7 +109,7 @@ Port forwarding means asking the VM to foward any traffic of data received on it
 `HTTP` stands for 'Hypertext Transfer Protocol', which is used to send and receive data through the internet. It is the language used by servers and browsers to communicate as well. HTTP codifies the messages sent by clients (ex: a browser) in a structured manner, so that servers can understand what the client is asking for, and send a response to it.
 
 ### 2.2.1 HTTP requests
-[This file](https://github.com/lombardero/nyu-devops-concepts/tree/master/0-basic-concepts/request.txt) contains an example of the request sent by Google Chrome while trying to reach the address `localhost:3000`. (To get this file, a server which simply logs the requests received in `localhost:3000` was created).
+[This file](request.txt) contains an example of the request sent by Google Chrome while trying to reach the address `localhost:3000`. (To get this file, a server which simply logs the requests received in `localhost:3000` was created).
 
 As we can see, there is a lot of information in a request (a lot of empty fields), some private data (such as the Computer and browser used by the client), but most importantly, the **URL** (in the example provided, the URL is `'/'`, or the 'home' URL), and the **HTTP Method** (a `GET` request in the example, since the client is simply requesting the server to 'read' the `'/'` URL).
 
