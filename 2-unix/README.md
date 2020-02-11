@@ -28,7 +28,7 @@ Options:
 - use `ls -a` to print all files (normal files and hidden ones). `-a` stands for 'all'
 - use `ls -la` to combine above 
 
-#### Create, Update, Delete
+#### Create, Update, Delete files and folders
 - `rm <directory>/<file>`: deletes (`rm` stands for 'remove') `<file>` in `<directory>` 
 - `rm -r <directory>` deletes `<directory>` and its contents. Note: this command needs `-r` (Recursive), since the OS will need to recursively enter every folder and file in the directory to completely erase it.
 - `mv <old_directory>/<file> <new_directory>/<file>` moves `<file>` from a directory to another
@@ -44,6 +44,8 @@ The command `cat` is one of the most useful commands to quickly check on the ter
 
 Additional arguments we can use for `cat`:
 - `cat -n <filename>` will print the contents of the file with a number showing the line number
+
+### 1.3 - 
 
 ## 2 - Environment variables
 'Environment variables' are variables stored in special folders, in order to only reveal its contents locally (on the terminal), and if requested.

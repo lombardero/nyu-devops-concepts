@@ -2,6 +2,8 @@
 
 This document summarizes the 'typical' workflow of commands used while working with `Git`. This document assumes the use of GitHub.
 
+Atlassian has a [very good tutorial on the Git Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow) (the one we use in class).
+
 Note: all the commands listed on this document will work on a terminal after downloading `Git`.
 
 ## Step 1: Initialize the project (`git init` or `git clone`)
