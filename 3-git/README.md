@@ -11,8 +11,12 @@ Before you start, make sure you have Git installed in your machine! If you don't
 
 #### [2 - Git workflow](2-git-workflow.md)
 
+## Additional documentation
+- `Git` [official documentation](https://git-scm.com/doc)
+- `Git` simplified [cheatsheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf).
+- `Git` Feature Branch Workflow: Atlassian [has a great tutorial on it](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow).
 
-# Installing `Git`
+
 ## A - Installing `Git` a Mac device
 Follow the the below steps: (to be tested)
 - Visit `Git`'s official page to Download `Git` on [this link](https://git-scm.com/downloads); click on the `Mac OS X` button to Download the right package.
