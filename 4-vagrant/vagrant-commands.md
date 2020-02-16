@@ -30,7 +30,7 @@ These commands must be run in the terminal in order to control a Vagrant-generat
 ```vagrant halt```
 - stops the current vagrant VM running.
 
-> Note: a specific VM can be halted by adding its unique id (a 7-digit Hex code such as `e3ea523`) using `vagrant halt <id-number>` (the `<id-number>` can be retrieved using [any of these commands](#4-checking-status)).
+> Note: a specific VM can be halted by adding its unique id (a 7-digit Hex code such as `e3ea523`) using `vagrant halt <id-number>` (the `<id-number>` can be retrieved using [any of these commands](#4---checking-status)).
 
 
 ```vagrant suspend```
