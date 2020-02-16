@@ -65,19 +65,19 @@ The command `echo` displays a string directly on the terminal. It can be used to
 
 ### 2.2 - Modifying permissions
 #### How do Unix permissions work?
-Unix systems have three kinds of permissions for each file: `r` for *Read permissions*, `w` for *Write permissions*, and `x` for *Execute permissions* (permissions can be checked using the `ls -l` command, which will show `-` when a permission is not available); each type of user can have different permissions for each file.
+Unix systems have three kinds of permissions for each file: `r` for *Read permissions*, `w` for *Write permissions*, and `x` for *Execute permissions* (permissions can be checked using the `ls -l` command, which will show `-` when a permission is not available). These permissions need to be set for each one of the three types of users defined in a Unix system.
 
 > Note: Unix systems have three kinds of users: 'user' (the owner of the file), 'group' (which is useful when many computers have access to one file), and 'others' (which is any user not on the first two groups).
 
 #### The `chmod` command
-The `chmod` (or 'change mode') command allows us to modify the permissions of a file for the three types of users. The easiest way of doing so is by using the 'numerical' code, which uses a three digit integer (one digit for each type of user) to define the permissions.
-Each digit is converted to binary to map the permissions using a `rwx` format: for example, `0` is `000` in binary, or 'No permissions'; `4` is `100` so 'Only read permission', `7` is `111` so 'All permissions granted'.
+The `chmod` (or 'change mode') command allows us to modify the permissions of a file for the three types of users. The easiest way of doing so is by using the three-digit code, which uses a each digit to define the permissions for each type of user.
+Each digit is converted into a binary 'mapping' (`1` for 'permission granted' and `0` for 'permission disabled') of the permissions using the `rwx` (read-write-execute) format: for example, `0` is `000` in binary, so it stands for 'none of the permissions granted'; `4` is `100` (or `r--` so 'Only read permission enabled', `7` is `111` so 'All permissions granted'.
 
-That way, `400`, for example, will allow the user of the file to read it, but will not allow it for the rest; and `777` will allow all actions by all users.
+That way, `400`, for example, will enable reading permissions for the first type of user (which is the 'user' of the file itself), and disable any permissions for rest ('groups' and 'others'); `777`, as another example, would enable all permissions by all users.
 
 ```chmod <three-digit-code> <filename>```
 - Modifies the permissions of `<filename>` and sets them to the ones specified on the three digit code. 
-> For example, `chmod 400 file.txt` will only enable reading of `file.txt` by the main user, and will not allow others to read it, write it or execute it.
+> For example, `chmod 400 file.txt` will only enable reading of `file.txt` by the main user, and will not allow groups or others to read it, write it or execute it.
 
 # 3 - Environment variables
 'Environment variables' are variables stored in special folders, in order to only reveal its contents locally (on the terminal), and if requested.
