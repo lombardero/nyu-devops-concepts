@@ -25,7 +25,7 @@ The hard drive is the 'long-term' storage of computers. It allows data to be sav
 
 Hard Drives can usually be of two types:
 - HDD (hard disk drives), which store data by changing the magnetic orientation of crystals of a rotating disk,
-- and SSD (solid state drices), such as USBs, which store data in a series of switches (transistors) that can be 'on' (1) or 'off' (0).
+- and SSD (solid state drives), such as USBs, which store data in a series of switches (transistors) that can be 'on' (1) or 'off' (0).
 
 ### 1.1.3 The RAM
 RAM stands for 'Random Access Memory' in reference of the way the data is stored on it, as any bit of information can be retrieved in any order (as opposed to a Hard disk drive, where the needle needs to physically switch between positions). The killer feature of the RAM is that the data can be accessed really fast (around 50-100 times faster than a typical SSD Hard Drive, and 100,000 times faster than an HHD), although the data is usually lost when the machine is turned off. 

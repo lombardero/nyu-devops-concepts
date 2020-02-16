@@ -1,14 +1,14 @@
 # Understanding the syntax of the `Vagrantfile`
 
-As mentioned in the [introduction](/4-vagrant/README.md#basics-of-vagrant-and-intuition) of this part, the `Vagrantfile` is simply a 'list of tasks' that Vagrant needs perform to set up our application's environment. These tasks follow in three categories:
-- **[1 - Launching the VM](#1---launching-the-vm)**: which operating system to use, how much CPU and RAM it requires, which ports should we forward, which files should we share with the VM, etc.
-- **[2 - Setting up the evironment](#2---setting-up-the-environment)**: which commands should be run in the shell to get the evironment ready
+As mentioned in the [introduction](/4-vagrant/README.md#basics-of-vagrant-and-intuition) of this part, the `Vagrantfile` is simply a 'list of tasks' that Vagrant needs perform to set up our application's environment. These tasks follow in four categories (each one will be a chapter of this document):
+- **[1 - Launching the VM](#1---launching-the-vm)**: Vagrant needs to know which operating system to use, how much CPU and RAM it requires, which ports should we forward, and which files should we share with the VM.
+- **[2 - Setting up the evironment](#2---setting-up-the-environment)**: Vagrant will need to run Unix commands to get the evironment ready for us to run our application in.
 - **3 - Launching Docker containers**: (to be done)
 
-Before we jump into these parts, it is important to mention that the `Vagrantfile` is written in the `Ruby` language. Luckily, it is not necessary an extensive knowledge of `Ruby` to understand it; all we need to understand for running `Vagrant` is explained below.
+Before jumping into these parts, it is important to mention the basics of the `Vagrantfile` syntax, which is written in `Ruby`. Luckily, it is not necessary an extensive knowledge of `Ruby` to use Vagrant; all we need to understand is on the chapter 'zero' below.
 
 # 0 - Understanding the `Vagrantfile`
-Vagrant works by introducing a `Vagrant` object that sets up the configuration. The only thing we need to understand for this course is that throughout the `Vagrantfile`, all commands run update this `Vagrant` object, which will be the one used by Vagrant to start the VM.
+Vagrant works by introducing a `Vagrant` object that sets up the configuration. The only thing we need to understand for this course is that all commands in the `Vagrantfile` simply update this `Vagrant` object, which will be the one used by Vagrant to launch and set the VM.
 
 Normally, all `Vagrantfile`s have this basic syntax:
 ```Ruby
@@ -21,10 +21,12 @@ end
 
 > Note: the number `2` inside the `.configure()` method represents the version of the configuration object that will be used between the `do` and the `end`. 
 
+All commands defined in the below parts should be added between the `do` and `end` statements above.
+
 # 1 - Launching the VM
 In this section, we will add the commands required to tell Vagrant the infrastructure (CPU, RAM), and the operating system required. We will define these commands through the `.vm` statement.
 ## 1.1 Setting up the VM requirements
-To set up the Infrastructure requirements (CPU, RAM) needed for the VM, we need to define the the VM provider (in our case, it will always be `"virtualbox"`).
+To set up the Infrastructure requirements (CPU, RAM) needed for the VM, we need to define the the VM provider (in our case, it will always be `"virtualbox"`), as well as access the arguments associated to it:
 ```Ruby
 #...
   config.vm.provider "virtualbox" do |vb|
@@ -40,7 +42,7 @@ To set up the Infrastructure requirements (CPU, RAM) needed for the VM, we need 
   config.vm.box = "ubuntu/bionic64"
 #...
 ```
-- Sets up the OS to the one specified (in the case above, we are using an Ubuntu Bionic 64 bit distribution).
+- Sets up the OS to the one specified (in the case above, we are using an Ubuntu Bionic 64-bit distribution).
 
 ```Ruby
 #...
@@ -51,7 +53,7 @@ To set up the Infrastructure requirements (CPU, RAM) needed for the VM, we need 
 
 ## 1.2 Setting up the network requirements
 ### Forwarding ports
-During the course, we will run applications inside our VM. In order to access them in the browser of our local machine, we will need to forward the ports [as explained in this section](../0-basic-concepts).
+During the course, we will run applications inside our VM. In order to access them in the browser of our local machine, we will need to forward the ports [as explained in this section](../0-basic-concepts/README.md#what-is-port-forwarding).
 
 ```Ruby
 #...
@@ -116,3 +118,5 @@ Once the VM is set up, we can start installing and running packages on it. We do
 #...
 ```
 - The code above runs the unix commands `apt-get update` and `apt-get install -y git` inside the VM after it is provisioned. Any Unix command can be automated thanks to this command
+
+> Note: this command will only work once `vagrant provision` is run (since we use the `vm.provision` method)
