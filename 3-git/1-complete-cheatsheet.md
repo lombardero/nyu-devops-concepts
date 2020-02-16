@@ -57,7 +57,7 @@ Once it is on the staging area, the file will be ready to be Committed (Saved on
 ```git reset HEAD -- [file]```
 - Removes from the staging area a `[file]` we previously added.
 
-Note: this command should not be confused with the `rm` one, explained below: `git reset HEAD` simply 'resets' the state of the Staging area for the specific `[file]` we select (that `[file]` must have been previoulsy added to the staging area (with the command `git add` for the command to work); `git rm` is used to 'delete' or 'not keep track' anymore of a file that we have committed in the past (we are telling `Git` not to keep track of it anyore in future commits).
+> Note: this command should not be confused with the `rm` one, explained below: `git reset HEAD` simply 'resets' the state of the Staging area for the specific `[file]` we select (that `[file]` must have been previoulsy added to the staging area (with the command `git add` for the command to work); `git rm` is used to 'delete' or 'not keep track' anymore of a file that we have committed in the past (we are telling `Git` not to keep track of it anyore in future commits).
 
 #### Removing files from Git tree
 ```git rm [file]```
@@ -75,7 +75,7 @@ Once the local changes have been sent to Staging area (git has taken a 'snapshot
 ```git commit -m '<commit description>'```
 - Saves the snapshots the files in the staging area in to the local `.git/` repository.
 
-Note: In the background, what `Git` does on each `commit` statement is saving the changes done to the files in an optimized format. The files do not get copied over and over, what is saved are only the lines of code that were deleted, and the new lines added from the previous version. That way, files can be 're-built' following any of the steps of each `commit` statement, from the initial state. Each `commit` statement receives a hash code, which will allow us to identify it, and retrieve it anytime we wish so.
+> Note: In the background, what `Git` does on each `commit` statement is saving the changes done to the files in an optimized format. The files do not get copied over and over, what is saved are only the lines of code that were deleted, and the new lines added from the previous version. That way, files can be 're-built' following any of the steps of each `commit` statement, from the initial state. Each `commit` statement receives a hash code, which will allow us to identify it, and retrieve it anytime we wish so.
 - `-m` lets you add a comment to the commit (Important, so you can keep track of what you did in that commit). Note that `Git` will force you to add the message if it is not included.
 
 #### Retrieving commit history
@@ -163,7 +163,7 @@ Example: `git pull origin maser`
 ### 2.4 Pushing data upstream
 ```git push [remote repository name] [branchname]```
 - "pushes" or updates the local data to the remote repository. This command will only work if we have access to the repository, and if there are no merge conflicts in the code.
-- Note: Adding `-u` (`git push -u ...`) in the statement creates a bond between 'origin/master' (local Git repository) and the virtual 'master' on Github. `-u` needs to be called one time only to do the bonding.
+> Note: Adding `-u` (`git push -u ...`) in the statement creates a bond between 'origin/master' (local Git repository) and the virtual 'master' on Github. `-u` needs to be called one time only to do the bonding.
 
 #### Force-pushing (Use very carefully)
 In the cases we are absolutely sure that we want to ignore the changes in the remote repository to push code from our local files, we can use the `-f` command added to the push statement. (`git push -f ...`). This will automatically update the remote repository with the changes on the local one, removing any conflicting parts in favor of the local data.
@@ -171,7 +171,7 @@ In the cases we are absolutely sure that we want to ignore the changes in the re
 ### 2.5 Tagging
 ```git tag -a [tag] -m [tag message]```
 - sets up an annotated tag that will be associated with a specific commit
-Example: `git tag -a v1.1 -m 'This is the 1.1 version'`
+> Example: `git tag -a v1.1 -m 'This is the 1.1 version'`
 
 ## 3. Working with Branches
 ### 3.1 Creating and switching branches
@@ -186,8 +186,7 @@ This is a useful [link](https://git-scm.com/book/en/v1/Git-Branching-Basic-Branc
 
 ```git checkout [namebranch]```
 - Switches to the branch spacified. The way Git handles it is by changing the pointer of the HEAD object, which will make all commits done from now on will go on the branch specified (note that if we have uncommitted changes that clash with the branch we are switching to, Git will not allow us to do the switch; to sort that see the `git stash` command).
-
-Note: once we run `checkout`, the local files on our workspace will also be updated to match the contents of the branch we are swithching to.
+> Note: once we run `checkout`, the local files on our workspace will also be updated to match the contents of the branch we are swithching to.
 
 ```git checkout -b [newbranch]```
 - adding `-b` to the checkout command creates a new branch from the current branch AND changes the pointer to work on it
