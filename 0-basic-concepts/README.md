@@ -13,12 +13,12 @@ This part will have a (very) basic overview of the parts of a computer.
 ## 1.1 Basic hardware components
 To understand why the software works the way it does, it can be useful to understand the main 'physical' components of a computer: the CPU, the Hard Drive, and the RAM. A very basic overview is explained below.
 
-Also: this [5-minute video from TED-Ed](https://www.youtube.com/watch?v=p3q5zWCw8J4) explains it amazingly well.
+> Also: this [5-minute video from TED-Ed](https://www.youtube.com/watch?v=p3q5zWCw8J4) explains it amazingly well.
 
 ### 1.1.1 The CPU
 CPU stands for 'Central Processing Unit', and acts as the 'brain' of the computer. It is responsible for running the software and performing the data manipulation in the computer. The CPUs installed in modern computers are optimized to be versatile and run many kinds of processes in parallel. 
 
-Note: A 'process' or a 'thread' is the elementary component of processing. Single programs can run multiple processes at a time. To get the intuition: a very simple python `for` loop, for example, where data is computed as a sequence, is a single process.
+> Note: A 'process' or a 'thread' is the elementary component of processing. Single programs can run multiple processes at a time. To get the intuition: a very simple python `for` loop, for example, where data is computed as a sequence, is a single process.
 
 ### 1.1.2 The Hard Drive
 The hard drive is the 'long-term' storage of computers. It allows data to be saved in a persistent way, so it is not lost if the machine is turn off; the problem with it is that accessing the data is pretty slow (that is when RAM becomes useful). Data such as Software packages, Photos, or Music is stored in the Hard Drive.
@@ -120,7 +120,7 @@ For example, a `GET` request to the home URL `'/'` should trigger the function t
  
 In this course, **URLs** and **HTTP methods** will follow a convention called the `RESTful API`.
 
-Note: The most frequently used HTTP methods are `GET` (read data), `PUT` (update some data on the server), `POST` (send some data on the server to create a resource), and `DELETE` (delete some resource). We will other HTTP methods in the `RESTful API` lecture.
+> Note: The most frequently used HTTP methods are `GET` (read data), `PUT` (update some data on the server), `POST` (send some data on the server to create a resource), and `DELETE` (delete some resource). We will other HTTP methods in the `RESTful API` lecture.
 
 #### Headers and body of the request
 All HTTP messages have two main components: the **header** and the **body**. 

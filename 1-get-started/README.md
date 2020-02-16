@@ -30,7 +30,7 @@ Official `VS Code` [guide for Windows in this link](https://code.visualstudio.co
 Official `VS Code` [guide for mac in this link](https://code.visualstudio.com/docs/setup/windows).
 
 ### 1.1.1 - Some useful commands in VS Code
-- `Ctrl + Space`: gives you the list of possible statements (such as available arguments of functions). Requires having the package of the language you are working on installed.
+- `Ctrl + Space`: gives you the list of possible statements (such as available arguments of functions). Requires having the extension of the language you are working on installed (check below paragraph).
 - `Alt + Shift + F`: reformats the code with the proper spacings (not useful for `Python`)
 
 ### 1.1.2 - Useful `VS Code` extensions
@@ -62,7 +62,7 @@ The terminal (also called 'shell', 'console' or 'command line') is the second mo
 In this course, we will use the terminal to install packages, run virtual machines and access them. Once inside of the virtual machines, we the terminal will allow us to read the logs of our service, edit it and debug it.
 
 Access to terminals in different devices:
-- On **Mac**, you can run your terminal by earching for `Terminal` in the Apps tab, or go to `Dock > Launch Pad > Other > Terminal`.
+- On **Mac**, you can run your terminal by searching for `Terminal` in the Apps tab, or go to `Dock > Launch Pad > Other > Terminal`.
 - On **Windows**, go to `Start > Command Prompt`, or search for `cmd` on the Windows search tab.
 - On **VS Code**, a built-in terminal (opened on the current folder where your Workspace is) can be launched by clicking `Terminal > New Terminal` on the top menu.
 - Alternatively, 3rd party command prompt applications can be installed.
@@ -78,7 +78,7 @@ Postman is a very useful debugging tool to check any kind of client request to o
 
 Download postman on the follwoing [link](https://www.getpostman.com/).
 
-Postman will allow us to send any request we like to our server to see how it reacts to it. To make it work we simply need to start our server locally. Once the server is running (errors should be printed out in our terminal for easy debugging), we can start sending client requests.
+Postman is a testing tool for servers; it wil allow us to send any request to our server and see how it reacts to it. To make it work we simply need to start our server locally. Once the server is running (errors should be printed out in our terminal for easy debugging), we can start sending client requests.
 
 The things we should pay attention to are:
 - The request type (`GET`, `PUT`, `POST`, `DELETE`...), on the left side of the top URL navigation bar
