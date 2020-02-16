@@ -106,7 +106,7 @@ A useful implementation uses an if statement to check if the file exists. In the
 ```
 
 # 2 - Setting up the environment
-Once the VM is set up, we can start installing and running packages on it. We do so by asking Vagrant to run command-line Unix statements (review all [unix statements on this section](../2-unix-statements)) with the below syntax:
+Once the VM is set up, we can start installing and running packages on it. We do so by asking Vagrant to run command-line Unix statements (review all [unix statements on this section](../2-unix/README.md)) with the below syntax:
 ```Ruby
 #...
   config.vm.provision "shell", inline: <<-SHELL
