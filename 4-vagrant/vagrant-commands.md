@@ -4,8 +4,9 @@ These commands must be run in the terminal in order to control a Vagrant-generat
 > Note: when any Vagrant command is run, Vagrant will look in the current directory fo any `Vagrantfile`. If it doesn't, it will keep on looking the upwards directories until the first `Vagrantfile` is found. The easiest way to run the correct `Vagrantfile` is to open the folder where the `Vagrantfile` can be found (check the current folder using the `pwd` command).
 
 ## 0 - Initializing Vagrant
-```vagrant init```
-- creates a 'default' `Vagrantfile` on the current folder, with has the minimum basic requirements to launch a VM.
+```vagrant init <box-name>```
+- creates a 'default' `Vagrantfile` on the current folder, with has the minimum basic requirements to launch a VM; `<box_name>` is the name of a valid Vagrant box such as `ubuntu/bionic64`, or `ubuntu/xenial64`.
+> Note: Box names can be found on [vagrantup.com](https://app.vagrantup.com/boxes/search).
 
 ## 1 - Launching the VM
 ```vagrant up```
