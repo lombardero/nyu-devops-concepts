@@ -31,7 +31,7 @@ These commands must be run in the terminal in order to control a Vagrant-generat
 ```vagrant halt```
 - stops the current vagrant VM running.
 
-> Note: a specific VM can be halted by adding its unique id (a 7-digit Hex code such as `e3ea523`) using `vagrant halt <id-number>` (the `<id-number>` can be retrieved using [any of these commands](#4---checking-status)).
+> Note: a specific VM can be halted by adding its unique id (a 7-digit Hash code such as `e3ea523`) using `vagrant halt <id-number>` (the `<id-number>` can be retrieved using [any of these commands](#4---checking-status)). This also works for other commands such as `destroy`.
 
 
 ```vagrant suspend```
@@ -41,7 +41,7 @@ These commands must be run in the terminal in order to control a Vagrant-generat
 ```vagrant resume```
 - resumes suspended VM
 
- # 4 - Checking status
+## 4 - Checking status
 ```vagrant status```
 - shows the status of the virtual machine on the current folder (tells us if it is running or not)
 
@@ -52,3 +52,4 @@ These commands must be run in the terminal in order to control a Vagrant-generat
 ## 5 - Removing the VM from hard disk
 ```vagrant destroy```
 - removes the VM from your hard disk
+> Note: a specific VM can be destroyed by referencing its unique id (a 7-digit Hash code such as `e3ea523`) using `vagrant destroy <id-number>` (the `<id-number>` can be retrieved using [any of these commands](#4---checking-status))

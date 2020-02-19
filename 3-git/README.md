@@ -2,7 +2,7 @@
 
 This document gives an overall picture of `Git`, assuming no previous background. It is composed by three documents. 
 
-Before you start, make sure you have Git installed in your machine! If you don't, the instructions are listed below.
+Before you start, make sure you have Git installed in your machine! If you don't, the instructions are listed below for [Mac](#a---installing-git-on-a-mac-device) and [Windows](#b---installing-git-on-a-windows-device).
 
 ### Document contents:
 #### [0 - Basics of Git](0-git-basics.md)
@@ -17,7 +17,7 @@ Before you start, make sure you have Git installed in your machine! If you don't
 - `Git` Feature Branch Workflow: Atlassian [has a great tutorial on it](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow).
 
 
-## A - Installing `Git` a Mac device
+## A - Installing `Git` on a Mac device
 Usually, `git` commands are installed by default in all Linux and Mac OSs.
 
 In case they don't, follow the the below steps:
