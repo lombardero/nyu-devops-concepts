@@ -51,7 +51,7 @@ Once it is on the staging area, the file will be ready to be Committed (Saved on
 - adds snapshot of `[file]` to the staging area (Snapshot of file is taken, and will be added to the Git repository next time we run `commit`) (Note that if you modify `[file]` again before committing, only the version added to the Staging area will be considered. To update the modified version, run the add command again with the same file)
 
 ```git add -A```
-- adds all modified files of the current folder in the Staging area
+- adds all newly created and modified files of the current folder in the Staging area
 
 ### Removing files from Staging area
 ```git reset HEAD -- [file]```
