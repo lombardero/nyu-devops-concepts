@@ -67,6 +67,9 @@ Access to terminals in different devices:
 - On **VS Code**, a built-in terminal (opened on the current folder where your Workspace is) can be launched by clicking `Terminal > New Terminal` on the top menu.
 - Alternatively, 3rd party command prompt applications can be installed.
 
+## Different types of terminals
+(Bash - Zsh - Windows?)
+
 ## Windows users: installing `git bash` command prompt
 `Git bash` is an application for Windows that allows to run the `git` commands (such as the ones on the [`git` cheatsheet](../3-git/1-complete-cheatsheet.md)). It is not required for Mac since `git` commands are installed by default.
 
