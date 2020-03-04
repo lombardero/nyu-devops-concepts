@@ -120,7 +120,7 @@ For example, a `GET` request to the home URL `'/'` should trigger the function t
  
 In this course, **URLs** and **HTTP methods** will follow a convention called the `RESTful API`.
 
-> Note: The most frequently used HTTP methods are `GET` (read data), `PUT` (update some data on the server), `POST` (send some data on the server to create a resource), and `DELETE` (delete some resource). We will other HTTP methods in the `RESTful API` lecture.
+> Note: The most frequently used HTTP methods are `GET` (read data), `PUT` (update some data on the server), `POST` (send some data on the server to create a resource), and `DELETE` (delete some resource). We will see other HTTP methods in the `RESTful API` lecture.
 
 #### Headers and body of the request
 All HTTP messages have two main components: the **header** and the **body**. 
