@@ -47,7 +47,6 @@ In Python, we define the Class name using the `class` keyword. Let's illustrate 
 ```python
 class Person:
     def __init__(self, complete_name):
-        complete_name.split()
         self.first_name = complete_name.split()[0]
         self.last_name = complete_name.split()[1]
 ```
