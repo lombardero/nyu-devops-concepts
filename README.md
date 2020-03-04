@@ -5,7 +5,7 @@ This repository aims to be the technical support for the tools required for the 
 The content of the repository is listed below.
 
 
-### Contents:
+### Contents (click on each)
 
 #### [0 - Basic concepts](0-basic-concepts/README.md)
 This part explains some basic CS concepts used on the course, such as Network and Unix basics.
@@ -22,6 +22,5 @@ The Git section explains why `Git` is useful, how to use it, and some concepts o
 #### [4 - Vagrant](4-vagrant/README.md)
 The Vagrant section has two parts: the list of commands required to run Vagrant (on the terminal), and the syntax used on the Vagrantfile (second part to be done).
 
-#### 5 - Python
-
-(To be done)
+#### [5 - Python](5-python/README.md)
+The Python part goes over all concepts required for the course: som Python fundamentals, Object-oriented programming concepts, and libraries used in the course such as `Flask`, `Unittest`, and `SQLAlchemy`.
