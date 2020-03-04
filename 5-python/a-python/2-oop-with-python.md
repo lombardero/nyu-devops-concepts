@@ -37,7 +37,7 @@ Classes are very important in Python: they are the building blocks of complexity
 
 ## 2.1 - Classes in Python
 ### 2.1.1 Defining a Class
-Remember: when we define a class, we are defining the structure of the we its instances to have: what types of data it will hold? which functions will be allowed? Creating an instance is simply using that 'building block' to initiate an object following that structure.
+Remember: when we define a class, we are defining the inner structure that its instantiations will have: what types of data it will hold? which functions will be allowed? Creating an instance is simply using that 'building block' to initiate an object following that structure.
 
 #### Initializing the Class with the `__init__` function
 
