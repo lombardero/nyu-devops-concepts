@@ -1,6 +1,6 @@
 # Understanding the syntax of the `Vagrantfile`
 
-As mentioned in the [introduction](/4-vagrant/README.md#basics-of-vagrant-and-intuition) of this part, the `Vagrantfile` is simply a 'list of tasks' that Vagrant needs perform to set up our application's environment. These tasks follow in four categories (each one will be a chapter of this document):
+As mentioned in the [introduction](/4-vagrant/README.md#basics-of-vagrant-and-intuition) of this part, the `Vagrantfile` is simply a 'list of tasks' that Vagrant needs perform to set up our application's environment. These tasks follow in three categories (each one will be a chapter of this document):
 - **[1 - Launching the VM](#1---launching-the-vm)**: Vagrant needs to know which operating system to use, how much CPU and RAM it requires, which ports should we forward, and which files should we share with the VM.
 - **[2 - Setting up the evironment](#2---setting-up-the-environment)**: Vagrant will need to run Unix commands to get the evironment ready for us to run our application in.
 - **3 - Launching Docker containers**: (to be done)
