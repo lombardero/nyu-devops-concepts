@@ -29,5 +29,9 @@ The Vagrant section has two parts: the list of commands required to run Vagrant 
 >Subjects treated: [what is Vagrant? (intuition)](4-vagrant/README.md), [CLI commands to run Vagrant](4-vagrant/vagrant-commands.md), [syntax of the `Vagrantfile`](4-vagrant/vagrantfile-syntax.md)
 
 ## [5 - Python](5-python/README.md)
-The Python part goes over all concepts required for the course: som Python fundamentals, Object-oriented programming concepts, and libraries used in the course such as `Flask`, `Unittest`, and `SQLAlchemy`.
->Subjects treated: [Object-oriented programming (Classes)](5-python/a-python/2-oop-with-python.md)
+The Python part goes over all concepts required for the course: som Python fundamentals, Object-oriented programming concepts, and libraries used in the course such as `Flask`, `Unittest`, and `SQLAlchemy`. (on-going)
+>Subjects treated: [Object-oriented programming (Classes)](5-python/a-python/2-oop-with-python.md), [the Flask library](5-python/a-python/4-flask.md)
+
+## [6 - Docker](6-docker/README.md)
+The Docker part intuitively explains docker, and shows how to use it (on-going)
+>Subjects treated: (On-going)
