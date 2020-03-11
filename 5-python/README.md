@@ -12,7 +12,7 @@ The available files are shown below (click to go to each part):
 **3 - Working with functions in Python**: (Coming soon)
 
 ## Second Part: Packages used in the course
-**4 - Flask**: (Coming soon)
+**[4 - Flask**](a-python/4-flask.md)
 
 **5 - Unittest**: (Coming soon)
 
