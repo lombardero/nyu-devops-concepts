@@ -29,5 +29,17 @@ Congratulations! You have installed `Git` correctly.
 
 Additional info [on this link](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
-## B - Installing `Git` on a Windows device
+## B - Installing `Git` on a Windows device + configuring
+### Step 1: Installing `Git-Bash`
 To run the `Git` commands on Windows, users must download the `Git bash` application (which provides a command prompt that understands `Git` commands). Download it on [this link](https://gitforwindows.org/).
+
+### Step 2: Additional configuration
+Once it has been installed, open the `Git bash` terminal and run the following commands: 
+```
+git config --global core.fileMode false`
+git config --global core.autocrlf false
+git config --global core.eol lf
+```
+- These commands allows Windows to understand unix files: without it, it may add `^M` (a carrage return) at the end of every line (will cause errors if other team members do not work with Windows).
+
+> Note: `bash` is a specific type of command-line statements (Linux distributions use "bash").

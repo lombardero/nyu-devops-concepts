@@ -51,6 +51,7 @@ class Person:
         self.last_name = complete_name.split()[1]
 ```
 - In the code above, we have created a class named `Person`, with a mandatory input variable: `complete_name`. The class, however, will save in memory the values of `first_name` and `last_name` as two separate variables internally.
+> Important note: by convention, class names in Python should start with a capital letter, while instances of that class are variables and should start with lower case. This is made so instance and classes are not confused. For example: `person` would be a valid name for an instance of the `Person` class.
 
 Let's look in more detail what each line of code is doing:
 - `class Person:` defines the class (creates a pointer to the name), that way, every time we run `Person(complete_name)` we will create an instance of that class.
