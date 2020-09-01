@@ -9,6 +9,9 @@ This document is organised as follows:
 - [2.2 Defining class methods](#22---defining-class-methods)
 - [2.3 Inheriting from classes](#23---class-inheritance)
 
+**[3 - The three pillars of OOP](#3---the-three-pillars-of-oop)**
+- [3.1 Encapsulation]()
+
 # 1 - Introduction to OOP
 ## What is OOP?
 Object-oriented programming (OOP) is a programming paradigm that allows programmers to encapsulate the business logic of applications in what we call 'objects'. 
@@ -21,6 +24,7 @@ Objects are abstract entities defined by programmers. Conceptually, an object is
 >In OOP, we can create a `Pet` object, which will have the variables `name`, `type`, `breed`, and `date_of_birth` associated to it. More importantly, we can define within the `Pet` object the functions `add_to_database` and `adopt`. The first adds the Pet to the database while the second removes it from the main database and adds it to an 'adopted Pets' database. The idea is to hide the complexity of the code in such a way that the statement `Pet.add_to_database()` performs always the desired action no matter the changes to the function we make (such as, for example, changing the type of database). That is OOP: the complexity is now encapsulated in the object itself, which makes the code much easier to maintain.
 
 ## The 'Models' file
+
 Objects are typically used with the MVC (or Model-View-Controller) design pattern. In a nutshell, the model divides the logic of the code in three parts:
 - The `Models` file contains all the object definitions of the code; it is the backbone of the application. Objects hold all the complexity of the system, such as the way it talks to the database.  In this part we also define the logic the application will follow, since we will define the actions each object will be capable of doing.
 - The `Contoller` defines the events that trigger the use of certain functionalities. In a typical server, the controller will define the actions to be taken once it knows the **URL** and **HTTP request** of a client's request. The controller should use the methods defined in the `Models` file, in such a way that if any of the models changes its implementation, the controller should still work.
@@ -100,49 +104,6 @@ rectangle1.area()
 ```
 - The code above will return `12` (as defined in the method definition), which is the area of the rectangle
 
-## 2.3 - Class inheritance
-Class inheritance is a very useful concept in OOP since it allows to reuse code, making it more readable and mantainable. Inheritance is used when we want to create an object with very similar functionalities as another; instead of re-coding an entire object from scratch, we use inheritance to create a 'copy' of the parent class (the class we inherit from), adding some functionalities to it
+# 3 - The three pillars of OOP
 
-### 2.3.1 Defining 'child' classes
-In order to create a new class ('child' class) based on another class, we need to use the `super()` function. See `super()`'s documentation [here](https://docs.python.org/2/library/functions.html#super).
-
-Let's come back to our `Rectangle` class example. This will be our parent class:
-```python
-class Rectangle:
-    def __init__(self, length, width):
-        self.length = length
-        self.width = width
-
-    def area(self):
-        return self.length * self.width
-
-    def perimeter(self):
-        return 2 * self.length + 2 * self.width
-```
-- The `Rectangle()` class is created, which requires two variables to instantiate itself `length`, and `width`, and has two methods.
-
-Now, let's say we want to create a `Square` class with the same functionalities as `Rectangle`, but adding one restriction: `length` needs to be equal to `width`. We can create a `Square` class that inherits all the properties from `Rectangle`.
-
-We can do so with the below syntax:
-```python
-class Square(Rectangle):
-    def __init__(self, length):
-        super(Square, self).__init__(self, length, length)
-```
-- The code above creates the new class `Square`, which requires a single argument as an input. `super()` will copy over the methods from `Rectangle` and make them available to `Square`; that process is called inheritance.
-
->Notes on the code above:
->- `class Square(Rectangle):`: we must add a pointer to the parent class for the child class to understand what class it is inheriting from
->- `def __init__(self, length):` initiates the `Square` class
->- `super(Square, self).__init__(self, length, length)`, copies the functionalities and executes the constructor of the parent class in the child class. From now on, all methods of the parent class are available to the child one. Note that `super()`(without arguments) would work as well, however it is good practice to include the pointers as we did above.
-
-Now, if we define `a = Square(3)`, we can run `a.area()` and we will get `9`.
-
-### 2.3.2 Checking if a class is parent of another
-We can check easily if a class is a parent from another with the `issubclass()` function:
-```python
-issubclass(Class1, Class2)
-```
-- Will return `True` if `Class1` is a subclass (a 'child') of `Class2`. 
-
-Example: `issubclass(Square, Rectangle)` will return `True` 
+We call the "pillars" of OOP, the 

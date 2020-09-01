@@ -77,7 +77,7 @@ VMs are one of the keys in the revolution of Cloud Computing: all instances ran 
 
 
 # 2 - Networking Basics
-In this course, we will be running a server, and use a nice trick called 'port-forwarding' to access the outputs of the server running inside a VM. For that, we need to understand some very basics of Networking, such as what are IPs, ports, as well as how HTML (the way servers talk to browsers) works.
+In this course, we will be running a server, and use a nice trick called 'port-forwarding' to access the outputs of the server running inside a VM. For that, we need to understand some very basics of Networking, such as what are IPs, ports, as well as how HTTP (the way servers talk to browsers) works.
 
 ## 2.1 IPs and Ports
 ### 2.1.1 IP addresses
