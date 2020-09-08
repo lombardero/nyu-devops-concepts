@@ -2,8 +2,6 @@
 
 This document summarizes the 'typical' workflow of commands used while working with `Git`. This document assumes the use of GitHub.
 
-Atlassian has a [very good tutorial on the Git Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow) (the one we use in class).
-
 Note: all the commands listed on this document will work on a terminal after downloading `Git`.
 
 ## Step 1: Initialize the project (`git init` or `git clone`)
@@ -45,7 +43,6 @@ Then, we start working on the new feature. For example, let's say we add some li
 - Again, we run `git status` to confirm everything is fine (we shoud see we modified `app.py` and created a new file `models.py`)
 
 ```git add app.py```
-
 ```git add models.py```
 - We must run the `add` command for all modified and newly created files. After this step we can re-run `git status` to check we have correctly added the files.
 
@@ -73,7 +70,6 @@ There are two ways of ensuring our code does not contain merge conflicts, it sta
 - Fetching the last changes from the `master` branch updates the local `.git/` folder (but not the local workspace) with the changes made by other team members. Note that this step can be done with the `pull` command as well.
 
 After updating `master`, we can return to the branch we were working on: `new-feature`:
-
 ```git checkout new-feature```
 - switches back to the 'new-feature' branch
 
@@ -85,7 +81,7 @@ At this point, we need to choose one of two possibilities: either merging `maste
 ```git merge master```
 - Merges `master` onto `new-feature` (there might be some merge conflicts)
 
-**Possibility B: Rebasing `new-feature`** will take the latest changes we just pulled from the `master` branch, and apply them to each of the commit statements of `new-feature`, as if we had just started working on `new-feature` right after pulling the changes. In a sense, it is 'faking' time. Check out the ['rebase' explanation in the Git cheatsheet](1-complete-cheatsheet.md#33-rebasing).
+**Possibility B: Rebasing `new-feature`** will take the latest changes we just pulled from the `master` branch, and apply them to each of the commit statements of `new-feature`, as if we had just started working on `new-feature` right after pulling the changes. In a sense, it is 'faking' time. Check out the ['rebase' explanation in the Git cheatsheet](https://github.com/lombardero/nyu-devops-concepts/blob/master/3-git/1-complete-cheatsheet.md#33-rebasing).
 
 ```git rebase master```
 - rebases `new-feature` into the latest fetched commit of the `master` branch.
