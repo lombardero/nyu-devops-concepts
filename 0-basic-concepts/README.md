@@ -1,6 +1,8 @@
 # COMPUTER SCIENCE REFRESHER
 
-This document contains an intuitive explanation of some elemental Computer Science concepts that are used in the course. It is intended as a 'live' document, completed each time a student has a doubt about a concept.
+This document contains an intuitive explanation of some elemental Computer Science
+concepts that are used in the course. It is intended as a 'live' document, completed
+each time a student has a doubt about a concept.
 
 ## Contents of the document:
 
@@ -8,40 +10,81 @@ This document contains an intuitive explanation of some elemental Computer Scien
 #### 2 - [Networking basics](#2---networking-basics)
 
 # 1 - Computing Basics
+
 This part will have a (very) basic overview of the parts of a computer.
 
 ## 1.1 Basic hardware components
-To understand why the software works the way it does, it can be useful to understand the main 'physical' components of a computer: the CPU, the Hard Drive, and the RAM. A very basic overview is explained below.
 
-> Also: this [5-minute video from TED-Ed](https://www.youtube.com/watch?v=p3q5zWCw8J4) explains it amazingly well.
+To understand why the software works the way it does, it can be useful to understand
+the main 'physical' components of a computer: the CPU, the Hard Drive, and the RAM. A
+very basic overview is explained below.
+
+> Also: this [5-minute video from TED-Ed](https://www.youtube.com/watch?v=p3q5zWCw8J4)
+> explains it amazingly well.
 
 ### 1.1.1 The CPU
-CPU stands for 'Central Processing Unit', and acts as the 'brain' of the computer. It is responsible for running the software and performing the data manipulation in the computer. The CPUs installed in modern computers are optimized to be versatile and run many kinds of processes in parallel. 
 
-> Note: A 'process' or a 'thread' is the elementary component of processing. Single programs can run multiple processes at a time. To get the intuition: a very simple python `for` loop, for example, where data is computed as a sequence, is a single process.
+CPU stands for 'Central Processing Unit', and acts as the 'brain' of the computer. It
+is responsible for running the software and performing the data manipulation in the
+computer. The CPUs installed in modern computers are optimized to be versatile and run
+many kinds of processes in parallel. 
+
+> Note: A 'process' or a 'thread' is the elementary component of processing. Single
+> programs can run multiple processes at a time. To get the intuition: a very simple
+> python `for` loop, for example, where data is computed as a sequence, is a single
+> process.
 
 ### 1.1.2 The Hard Drive
-The hard drive is the 'long-term' storage of computers. It allows data to be saved in a persistent way, so it is not lost if the machine is turn off; the problem with it is that accessing the data is pretty slow (that is when RAM becomes useful). Data such as Software packages, Photos, or Music is stored in the Hard Drive.
+
+The hard drive is the 'long-term' storage of computers. It allows data to be saved in
+a persistent way, so it is not lost if the machine is turn off; the problem with it
+is that accessing the data is pretty slow (that is when RAM becomes useful). Data such
+as Software packages, Photos, or Music is stored in the Hard Drive.
 
 Hard Drives can usually be of two types:
-- HDD (hard disk drives), which store data by changing the magnetic orientation of crystals of a rotating disk,
-- and SSD (solid state drives), such as USBs, which store data in a series of switches (transistors) that can be 'on' (1) or 'off' (0).
+- HDD (hard disk drives), which store data by changing the magnetic orientation of
+  crystals of a rotating disk,
+- and SSD (solid state drives), such as USBs, which store data in a series of switches
+  (transistors) that can be 'on' (1) or 'off' (0).
 
 ### 1.1.3 The RAM
-RAM stands for 'Random Access Memory' in reference of the way the data is stored on it, as any bit of information can be retrieved in any order (as opposed to a Hard disk drive, where the needle needs to physically switch between positions). The killer feature of the RAM is that the data can be accessed really fast (around 50-100 times faster than a typical SSD Hard Drive, and 100,000 times faster than an HHD), although the data is usually lost when the machine is turned off. 
 
-RAM is used to speed up processes: typically, when a software is launched, it will load the data (for example, all of the variables created in a Python script) so that the CPU can do its computations quickly. Browsers also use the RAM to store the data they received from the internet, such as images and HTML files, so they do not overload the network by requesting it each time the user opens the browser tab.
+RAM stands for 'Random Access Memory' in reference of the way the data is stored on it,
+as any bit of information can be retrieved in any order (as opposed to a Hard disk
+drive, where the needle needs to physically switch between positions). The killer
+feature of the RAM is that the data can be accessed really fast (around 50-100 times
+faster than a typical SSD Hard Drive, and 100,000 times faster than an HHD), although
+the data is usually lost when the machine is turned off. 
+
+RAM is used to speed up processes: typically, when a software is launched, it will load
+the data (for example, all of the variables created in a Python script) so that the CPU
+can do its computations quickly. Browsers also use the RAM to store the data they
+received from the internet, such as images and HTML files, so they do not overload the
+network by requesting it each time the user opens the browser tab.
 
 #### What does 'Caching' mean?
-'Caching' is a term used in Computer Science that simply means 'Storing in RAM', so it can be accessed faster.
+
+'Caching' is a term used in Computer Science that simply means 'Storing in RAM', so it
+can be accessed faster.
 
 #### What does 'saving the state' mean?
-'Saving the state' of a machine simply means saving some of the contents of the RAM into the Hard Drive, so it can be recovered later. The data we usually save is an 'intermediate step' of computation stored in the RAM that we want to recover later. It is called the 'state' since it is not recoverable if lost; when saved in the Hard drive, it becomes recoverable.
 
-Docker containers, for example, always start from a 'saved state' of a previously generated container (which has the software we want already installed and running), so that desired packages are launched as fast as possible.
+'Saving the state' of a machine simply means saving some of the contents of the RAM into
+the Hard Drive, so it can be recovered later. The data we usually save is an
+'intermediate step' of computation stored in the RAM that we want to recover later. It
+is called the 'state' since it is not recoverable if lost; when saved in the Hard drive,
+it becomes recoverable.
+
+Docker containers, for example, always start from a 'saved state' of a previously
+generated container (which has the software we want already installed and running), so
+that desired packages are launched as fast as possible.
 
 ### 1.1.4 Other components
-Computers have many other components, such as the Mother Board, which connects the three components mentioned above (CPU, RAM, and Hard Disk), and other components such as GPU (or 'Graphics Processing Unit) to process media; but these are far beyond the scope of what is needed to understand for the course.
+
+Computers have many other components, such as the Mother Board, which connects the three
+components mentioned above (CPU, RAM, and Hard Disk), and other components such as GPU
+(or 'Graphics Processing Unit) to process media; but these are far beyond the scope of
+what is needed to understand for the course.
 
 ## 1.2 Software components
 This part overviews how the software controls the hardware. The goal of this part is to understand very basically how a computer is controlled, and explain what a Virtual Machine (VM) is. For that, we need to intuitively understand what is the kernel, and an hypervisor.
