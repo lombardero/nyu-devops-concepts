@@ -2,22 +2,32 @@
 
 Like [Vagrant](../4-vagrant/README.md), Docker is a DevOps tool since it automates the process of creating an environment (packaging it in an isolated container with its application) and running applications. But it is much more than that, let's see why in this document.
 
-The full Docker documentation is distributed in four parts:
+The full Docker documentation is linked below:
 - **[0 - Basic intuition](#basic-intuitions)**: some fundamental concepts to understand what Docker is
-- **[1 - Building images with the `Dockerfile`]()**: (to be done)
-- **[2 - Running instances through the command line]()**: (to be done)
-- **[4 - Managing multiple instances]()**: (to be done)
+
+- **[1 - Running docker containers](1-run-container.md)**
+
+- **[2 - Container networks](2-cont-networks.md)**: how containers talk to each other
+
+- **[3 - Building custom images with the `Dockerfile`](3-docker-images.md)**
+
+- **[4 - Persisting data with volumes](4-docker-volues.md)**: how to persist data from containers
+
+- **[5 - Running multiple-container applications with Docker compose](5-docker-compose.md)**
 
 # Basic intuition
 Here are some important intuitions on how Docker works.
 
 ## 1 - What is containerization?
-Containerization is the idea of packaging the application with its dependencies. Before virtualization and Docker existed, if we wanted to run an application in a server (or in our local machine) in order to test it, we needed to download the software packages that the application would be built on: for example, a python application requires a version of Python, flask, a Database, other libraries, etc. That becomes messy pretty fast, as developers needed to run and test different applications on the same computer; packages collided, they worked differently on different machines; in essence: a nightmare.
 
-With that, containerization appeared. The idea is pretty simple: instead of downloading all the dependencies in our local machine and create a mess, we instead create a 'clean' and isolated virtual machine where we can install all the packages that the application requires, without affecting the main environment. That way, we keep the 'mess' isolated into different containers, or 'drawers' in a closet, which can be launched and stopped every time we want.
+Containerization is the idea of packaging the application with its dependencies. Before virtualization and Docker existed, if we wanted to run an application in a server (or in our local machine) in order to test it, we needed to download the software packages that the application would be built on: for example, a python application requires a version of Python, flask, a Database, other libraries, etc. That becomes messy pretty fast, as developers needed to run and test different applications on the same computer; packages collided, they worked differently on different machines...
+
+With that, virtualisation appeared. The idea is pretty simple: instead of downloading all the dependencies in our local machine, we instead create a 'clean' and isolated virtual machine where we can install all the packages that the application requires, without affecting the main environment. That way, we keep the 'mess' isolated into different VMs.
+
+Finally, containarization appeared as an enhancement of Virtualisation. Virtualisation still had a problem: spinning up a VM is slow, and uses an important amount of space in the host machine. This happens since for each machine, a full Operating System needs to be stored, and launched. But then, an idea came in: if most of the services we need are linux-based, why do we need to download a full operating system several times? Why not "share" a base linux operating system and run isolated processes with just the things needed for that application? This, is exactly what Docker does.
 
 ## 1 - What's the difference between Vagrant and Docker?
-Docker and Vagrant are two different ways to build an application container; they have two major differences in the way they work:
+Docker and Vagrant are two different ways to build a containerized application; they have two major differences in the way they work:
 
 **Vagrant**'s main distinctions from Docker are:
 1. Vagrant launches full a Virtual Machine. That means that in order for it to run, Vagrant needs specify how much RAM, CPU and Storage from our local device it needs to allocate. Once the VM is running, those resources will be blocked even if our VM is not using them. On top of that, VMs are heavy-weight systems: they take some time (on the dozens of seconds order) to launch. It is exactly like "a computer inside a computer": needs to be launched and halted.
@@ -29,6 +39,8 @@ Docker and Vagrant are two different ways to build an application container; the
 
 ## 3 - What is a Docker image, how is it created, and how does Docker use it?
 A docker image is simply "how a machine looked like at a point in time". Of course, that point in time is defined by us in the `Dockerfile`.
+
+> A much detailed explanation on the `Dockerfile` syntax can be found in [this section](3-docker-images.md).
 
 In the `Dockerfile`, we tell Docker what steps it needs to perform before taking the snapshot and saving it as an image, so it can be copied and run later. Here is a very simple example on how Docker creates a new image through a `Dockerfile`:
 - `FROM alpine`: "go to Dockerhub (online repository), download the `alpine` image (which is a Docker image with the Alpine Linux distribution installed), and run it"
